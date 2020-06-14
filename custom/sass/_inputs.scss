@@ -1,0 +1,81 @@
+.input-text,
+.input-textarea{
+  width: 100%;
+  font-family: $font-dosis;
+  color: $preto;
+  padding: 1.2em !important;
+  font-weight: 500;
+  border: 2px solid $preto;
+  font-size: 16px;
+
+  @extend .trans;
+  @include border-radius(0);
+
+  &:focus{
+    outline: none !important;
+    border-color: $preto;
+    box-shadow: 0 0 10px $preto;
+  }
+
+  @include input-placeholder{
+    color: $cinza-ciano;
+  }
+}
+
+.input-textarea{
+  height: 120px;
+}
+.wpcf7-submit{
+  @extend .button-effect;
+  @extend .btn-5;
+  @extend .button-black;
+}
+/*
+input,
+textarea{
+  padding: 20px 30px !important;
+  border-radius: 0 !important;
+  font-size: 16px;
+}
+
+textarea{
+
+}
+
+.formularioContato{
+  textarea{
+    height: 120px;
+  }
+}
+
+input.wpcf7-not-valid,
+textarea.wpcf7-not-valid{
+  background-color: $vermelho-claro !important;
+}
+
+.wpcf7-response-output{
+  padding: 20px !important;
+  margin: 0 !important;
+  text-align: justify;
+}
+
+.wpcf7{
+  .wpcf7-validation-errors{
+    background-color: $vermelho !important;
+    color: $branco !important;
+    border-radius: 0 !important;
+    border: 1px $vermelho solid !important;
+  }
+}
+
+
+.input-search{
+  font-size: 16px !important;
+  height: 60px;
+
+  @extend .trans;
+
+  &:focus{
+
+  }
+}*/

@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+@import url('https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Rock+Salt|Zilla+Slab+Highlight');
+@import url('https://fonts.googleapis.com/css?family=Economica:400,700');
+
+/*@include font-face(Adrip1, fonts/adrip1);*/
+@font-face {
+  font-family: "Adrip1";
+  src: url("../fonts/adrip1.ttf?") format("truetype")
+  /*src: url("fonts/Samplino.eot?") format("eot")*/
+  /*url("fonts/Samplino.woff2") format("woff2"),
+  url("fonts/Samplino.woff") format("woff"),
+  url("fonts/Samplino.ttf") format("truetype"),
+  url("fonts/Samplino.svg#Samplino") format("svg");*/
+}
+
+$font-title: 'Dosis', sans-serif;
+$font-adrip: 'Adrip1', cursive;
+
+/*$font-default: 'Neucha', cursive;*/
+$font-default: 'Dosis', serif;
+$font-title-main: 'Rock Salt', cursive;
+/*
++   Titles, subtitles and anything
+*/
+
+$font-poret: 'Poiret One', cursive;
+$font-badscript: 'Bad Script', cursive;
+$font-cabin: 'Cabin Sketch', cursive;
+$font-dosis: 'Dosis', sans-serif;
+$title-menu: 'Economica', sans-serif;
+$title-midia: $font-badscript;
+
+.title-medjium{
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+
+.title-main{
+  font-family: $font-title-main;
+  text-transform: lowercase;
+  font-size: 32px !important;
+}
+
+.title-midia{
+  font-family: $font-dosis !important;
+}
+
+.title-video{
+  font-family: $font-dosis !important;
+  font-size: 26px;
+}
+
+.title-tag{
+  /*font-family: $font-adrip !important;*/
+  font-family: $font-title;
+  word-spacing: 4px;
+  font-size: 60px;
+  letter-spacing: 2px;
+
+  &:after{
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    position: relative;
+    margin: 20px auto 0;
+    text-align: center;
+    background-color: $preto;
+  }
+}
+
+.title-post{
+  font-family: $font-title;
+  font-size: 24px;
+  display: block;
+  color: $preto;
+  font-weight: 700;
+  text-align: center;
+  @extend .trans;
+
+  &:after{
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background-color: $dourado;
+    margin: 10px auto;
+    @extend .trans;
+  }
+  
+  &:hover{
+    color: $dourado;
+
+    &:after{
+      /*background-color: $preto;*/
+      width: 100px;
+    }
+  }
+}
+
+.title-not-found{
+  font-size: 60px;
+  font-family: $font-adrip;
+}
+
+.title-blog-post{
+  font-size: 2.2rem;
+  font-family: $font-dosis;
+  text-align: center;
+
+  &:after{
+    content: '';
+    display: block;
+    width: 100px;
+    height: 2px;
+    background-color: $preto;
+    margin: 25px auto -5px;
+  }
+}
+

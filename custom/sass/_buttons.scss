@@ -1,0 +1,165 @@
+.button-black{
+  color: $preto !important;
+  border: 2px solid $preto !important;
+  background-color: $branco;
+  font-size: 12px !important;
+  font-family: $font-default;
+  padding: 14px 26px;
+
+  @extend .trans;
+  @include border-radius(0);
+  @extend .button-effect;
+  @extend .btn-5;
+  
+  &:hover{
+    background-color: $preto;
+    color: $branco !important;
+  }
+}
+
+.button-effect{
+  background: none;
+  display: block;
+  font-weight: bold;
+  margin: 1em auto;
+
+  position: relative;
+  text-transform: uppercase;
+
+  &:before,
+  &:after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+  }
+
+  &:hover{
+    color: #2ecc71;
+  }
+}
+
+.button-effect,
+.button-effect:after{
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* BUTTON 2 */
+.btn-2::after {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 0;
+}
+
+.btn-2:hover:after {
+  width: 100%;
+}
+
+
+/* BUTTON 5 */
+.btn-5 {
+  overflow: hidden;
+}
+
+.btn-5::after {
+  /*background-color: #f00;*/
+  height: 100%;
+  left: -35%;
+  top: 0;
+  transform: skew(50deg);
+  transition-duration: 0.6s;
+  transform-origin: top left;
+  width: 0;
+}
+
+.btn-5:hover:after {
+  height: 100%;
+  width: 135%;
+}
+
+.btn-continue-lendo{
+  color: $preto !important;
+  font-family: $font-poret !important;
+  position: relative;
+  text-align: center;
+  display: block;
+  text-decoration: none !important;
+
+  &:after{
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+    height: 1px;
+    text-align: center;
+    position: absolute;
+    @extend .trans;
+    background-color: $preto;
+  }
+
+  &:hover{
+    &:after{
+
+      width: 100px;
+    }
+  }
+}
+
+
+.button-effect {
+  flex: 1 1 auto;
+  padding: 15px 30px;
+  border: 2px solid $preto;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+  display: inline-block;
+  margin: 10px auto;
+  max-width: 220px;
+  font-size: 14px;
+  font-family: $font-dosis;
+  color: $preto;
+  text-decoration: none !important;
+  word-spacing: 5px;
+  
+  &:after {
+    position: absolute;
+    transition: .3s;
+    content: '';
+    width: 0;
+    left: 50%;
+    bottom: 0;
+    /*height: 3px;*/
+    background: $preto !important;
+  }
+
+  &:nth-of-type(1):after {
+    height: 120%;
+    left: -10%;
+    transform: skewX(15deg);
+    z-index: -1;
+  }
+  &:hover {
+    cursor: pointer;
+    color: $branco;
+
+    &:after {
+      width: 100%;
+      left: 0;
+    }
+    &:nth-of-type(1):after {
+      left: -10%;
+      width: 120%;
+    }
+
+  }
+
+  &:active{
+    color: $preto;
+  }
+}
