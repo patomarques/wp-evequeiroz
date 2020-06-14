@@ -1,4 +1,4 @@
-# Eve Queiroz Wordpress theme
+# Eve Queiroz .:. Wordpress theme
 Disponível em: https://evequeiroz.com.br/
 
 Depedências

@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/patomarques/wp-evequeiroz/issues"
   },
-  "homepage": "https://github.com/patomarques/wp-evequeiroz#readme"
+  "homepage": "https://github.com/patomarques/wp-evequeiroz#readme",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
 }
