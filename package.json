@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/patomarques/wp-evequeiroz#readme",
   "dependencies": {
-    "node-sass": "^4.14.1"
+    "isotope-layout": "^3.0.6",
+    "node-sass": "^4.14.1",
+    "packery": "^2.1.2",
+    "parallax-js": "^3.1.0"
   }
 }
