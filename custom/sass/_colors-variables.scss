@@ -1,0 +1,49 @@
+//responsive variables
+$screen-xs-min: 450px;
+$screen-xs-max: 450px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+
+// colors variables
+$preto: #000000;
+$branco: #FFFFFF;
+
+$preto-bufento: #0f0f0f;
+
+$cinza74: #747474;
+$cinza66: #666666;
+$cinza4c: #4c4c4c;
+$cinza-f6: #f6f6f6;
+$cinza-claro: #e9e9e9;
+$cinzaA8: #A8A8A8;
+$cinza-ciano: #818e96;
+$cinza-text: #383838;
+$cinza-full-bar: #383838;
+
+$azul-claro: #d7edfb;
+$azul-cinza: #ecf2f6;
+
+$vermelho-claro: #FF8B86;
+$vermelho: #d9534f;
+
+$roxo: #5b2461;
+$roxo-claro: #6b3970;
+
+$roxo-roxo: #761fda;
+$cor-preferida: #7b5cb7;
+
+$dourado: #dcad54;
+
+.bg-cinza-claro{
+  background-color: $cinza-claro;
+}
+
+
+.bg-cinza-ciano{
+  background-color: $cinza-ciano;
+}
+
+.bg-roxo{
+  background-color: $roxo-claro;
+}

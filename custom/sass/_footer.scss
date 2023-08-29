@@ -1,0 +1,128 @@
+.site-footer{
+  background-color: $preto !important;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.logo-footer{
+  max-width: 350px;
+  display: block;
+  margin: 80px auto 120px;
+}
+
+.site-nome{
+  color: $branco;
+  font-size: 16px;
+  a{
+    text-decoration: none;
+    @extend .trans;
+
+    &:hover{
+      color: $dourado !important;
+    }
+  }
+}
+.site-info{
+  font-family: $font-dosis;
+
+  .dev-sign{
+    position: relative;
+    margin-top: -2px;
+    &:hover{
+      .devby{
+        display: block;
+      }
+
+    }
+  }
+  .devby{
+    display: none;
+    position: absolute;
+    margin: -18px 0 0 28px;
+
+    @extend .trans;
+  }
+  .link-devby{
+    font-family: $font-adrip;
+    font-size: 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: $branco !important;
+    @extend .trans;
+
+    &:before,
+    &:after{
+      display: inline-block;
+      font-size: 20px;
+      @extend .trans;
+    }
+    &:before{
+      content: '<<';
+      padding-right: 10px;
+    }
+    &:after{
+      content: '>>';
+      padding-left: 10px;
+    }
+
+    &:hover{
+      color: $dourado !important;
+
+      &:after{
+        content: '<<';
+      }
+
+      &:before{
+        content: '>>';
+      }
+    }
+  }
+}
+footer{
+/*  position: fixed;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;*/
+  padding: 30px 0 10px !important;
+}
+
+
+@media (max-width: $screen-xs-max) {
+  .site-nome,
+  .dev-sign{
+    text-align: center;
+    display: block;
+    float: none !important;
+  }
+
+  .site-nome{
+    font-size: 16px;
+  }
+
+  .dev-sign{
+    padding-top: 5px;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .logo-footer{
+    max-width: 280px;
+    margin: 80px auto;
+  }
+}
+
+@media (min-width: $screen-sm-min){
+  .logo-footer{
+    max-width: 550px;
+  }
+}
+
+
+@media (min-width: $screen-md-min){
+
+}
+
+@media (min-width: $screen-lg-min){
+
+}

@@ -1,0 +1,43 @@
+/*@import '../../bower_components/font-awesome/scss/font-awesome';
+@import '../../bower_components/bourbon/app/assets/stylesheets/_bourbon';*/
+/*@import '../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap';*/
+
+@import "../css/normalize";
+
+@import '_mixins';
+@import '_colors-variables';
+@import '_title-and-fonts';
+
+@import '_inputs';
+@import '_buttons';
+
+@import '_header';
+@import '_footer';
+
+@import '_base';
+
+@import '_home';
+@import '_handpoke';
+@import '_graffiti';
+@import '_aquarela';
+
+@import '_blog';
+
+/*
+
+@media (max-width: $screen-xs-max) {
+
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max){
+
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max){
+
+}
+
+@media (min-width: $screen-lg-min){
+
+}
+*/
