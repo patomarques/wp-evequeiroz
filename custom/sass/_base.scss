@@ -35,15 +35,15 @@ body{
   border-radius: 10px;
 }
 
+.text-medium {
+  font-size: 1.5em;
+}
+
 #page{
   display: block;
   position: relative;
 }
 
-.site{
-  /*position: relative !important;
-  z-index: 50 !important;*/
-}
 .down-arrow{
   color: $branco;
   width: 50px;
@@ -314,9 +314,7 @@ figure.effect-bubba:hover p {
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
 }
-/* # # # #
-# # # # # # contato
-# # # #*/
+
 .title-main{
   margin-bottom: 80px;
   display: block;
@@ -519,12 +517,6 @@ figure.effect-bubba:hover p {
 
 span.wpcf7-not-valid-tip{
   display: none;
-}
-
-
-div.wpcf7-mail-sent-ng,
-div.wpcf7-aborted{
-
 }
 
 div.wpcf7-response-output{

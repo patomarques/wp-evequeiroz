@@ -32,14 +32,14 @@ get_header(); ?>
             wp_reset_postdata();
             ?>
             <div class="row">
-                <div class="col-sm-12 col-md-5 col-lg-4 text-center">
+                <div class="col-sm-12 col-md-5 col-lg-4 text-center hidden">
                     <div class="js-tilt" data-tilt>
                         <?= $photo_me ?>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-7 offset-lg-1 col-lg-7 text-center">
-                    <p class="about-me-description">
-                        <?= $about_me ?>
+                <div class="col-sm-12 text-center">
+                    <p class="text-medium">
+                        <?//= $about_me ?>
                     </p>
                     <a href="<?php echo get_site_url(); ?>/sobre-mim" class="button-effect">Continue Lendo...</a>
                 </div>
