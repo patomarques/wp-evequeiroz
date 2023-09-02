@@ -36,8 +36,6 @@
 
         <?php if (!is_page_template('blank-page.php') && !is_page_template('blank-page-with-container.php')) : ?>
 
-		
-
         <header
           id="masthead"
           class="site-header navbar-static-top"
@@ -46,8 +44,7 @@
           <div class="full-top-bar d-none d-lg-block">
             <div class="container">
               <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-6"></div>
-                <div class="col-xs-12 col-sm-12 col-md-6 text-right hidden">
+                <div class="col-xs-12 text-right hidden">
                   <ul class="list-inline list-top-social-icons mb-0">
                     <li class="list-inline-item">
                       <a
@@ -86,7 +83,7 @@
 
           <div class="container">
             <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+              <div class="col-sm-9 col-lg-4">
                 <div class="navbar-brand">
                   <?php if (get_theme_mod('wp_bootstrap_starter_logo')) : ?>
                   <a href="<?php echo esc_url(home_url('/')); ?>">
@@ -104,18 +101,25 @@
                   <?php endif; ?>
                 </div>
 
-                <label class="menu-bars-fullscreen hidden-lg">
+               
+
+              </div>
+
+              <div class="col-sm-3 d-md-none">
+                <label class="menu-bars-fullscreen">
                   <input type="checkbox" />
                   <span class="menu"> <span class="hamburger"></span> </span>
                   <div class="menu-fullscreen">
                     <?php
-                                    wp_nav_menu(array(
-                                        'theme_location'    =>
-                    'primary', 'container' => 'menu-menu-header-mobile',
-                    'container_id' => '', 'container_class' => '', 'menu_id' =>
-                    false, 'menu_class' => 'navbar-nav menu-mobile', 'depth' =>
-                    3, 'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-                    'walker' => new wp_bootstrap_navwalker() )); ?>
+                      wp_nav_menu(array(
+                          'theme_location'    =>
+                          'primary', 'container' => 'menu-menu-header-mobile',
+                          'container_id' => '', 'container_class' => '', 'menu_id' =>
+                          false, 'menu_class' => 'navbar-nav menu-mobile', 'depth' =>
+                          3, 'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+                          'walker' => new wp_bootstrap_navwalker() )); 
+                    ?>
+
                     <ul class="list-inline list-social-icons list-social-icons-mobile hidden">
                       <li class="list-inline-item">
                         <a
@@ -151,14 +155,15 @@
               <div class="col-lg-8 d-none d-md-block text-right">
                 <nav class="navbar navbar-toggleable-md navbar-light">
                   <?php
-                                        wp_nav_menu(array(
-                                            'theme_location'    =>
-                  'primary', 'container' => 'div', 'container_id' =>
-                  'menu-menu-header', 'container_class' => 'collapse
-                  navbar-collapse justify-content-end menu-desktop', 'menu_id'
-                  => false, 'menu_class' => 'navbar-nav', 'depth' => 3,
-                  'fallback_cb' => 'wp_bootstrap_navwalker::fallback', 'walker'
-                  => new wp_bootstrap_navwalker() )); ?>
+                    wp_nav_menu(array(
+                      'theme_location'    =>
+                      'primary', 'container' => 'div', 'container_id' =>
+                      'menu-menu-header', 'container_class' => 'collapse
+                      navbar-collapse justify-content-end menu-desktop', 'menu_id'
+                      => false, 'menu_class' => 'navbar-nav', 'depth' => 3,
+                      'fallback_cb' => 'wp_bootstrap_navwalker::fallback', 'walker'
+                      => new wp_bootstrap_navwalker() )); 
+                  ?>
                 </nav>
               </div>
             </div>

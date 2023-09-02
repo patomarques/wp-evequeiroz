@@ -44,6 +44,14 @@ body{
   position: relative;
 }
 
+.content-full {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: relative;
+}
+
 .down-arrow{
   color: $branco;
   width: 50px;
@@ -60,11 +68,11 @@ body{
   display: block;
 }
 
-/* EFFECT GRID*/
 .grid {
+  width: 100vw;
   position: relative;
   margin: 0 auto;
-  padding: 1em 0 4em;
+  padding: 0;
   list-style: none;
   text-align: center;
 
@@ -72,15 +80,18 @@ body{
     position: relative;
     float: left;
     overflow: hidden;
-    margin: 10px 0;
-    /*min-width: 320px;
-    max-width: 480px;
-    max-height: 360px;*/
-    width: 25%;
-    height: 25vw;
+    margin: 0;
+    // width: 25%;
+    height: 60vh;
     background: $preto;
     text-align: center;
     cursor: pointer;
+
+    &:after {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
 
     video,
     img{
@@ -674,6 +685,31 @@ div.wpcf7-response-output{
       &:before{
         @extend .trans;
       }
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min){
+  .grid {
+    figure {
+      width: 100vw;
+    }
+  }
+}
+
+@media (min-width: $screen-md-min){
+  .grid {
+    figure {
+      width: calc(100vw/3);
+      height: 35vh;
+    }
+  }
+}
+
+@media (min-width: $screen-lg-min){
+  .grid {
+    figure {
+      height: 50vh;
     }
   }
 }

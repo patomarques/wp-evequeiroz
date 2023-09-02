@@ -380,38 +380,17 @@ section.home-banner-video {
 
   #midias-videos-home{
     .effect-bubba{
-      width: 100%;
+      width: 100%; 
       height: 65vw;
     }
   }
 }
 @media (min-width: $screen-xs-min){
 
-
-  #home-trampos{
-    .grid{
-      figure{
-        width: 100%;
-        height: 100vw;
-        margin: 0;
-      }
-    }
-  }
 }
 
 @media (min-width: $screen-sm-min){
 
-
-
-  #home-trampos{
-    .grid{
-      figure{
-        margin: 0;
-        width: 50%;
-        height: 50vw;
-      }
-    }
-  }
 }
 
 @media (min-width: $screen-md-min){
@@ -429,17 +408,7 @@ section.home-banner-video {
 }
 
 @media (min-width: $screen-lg-min){
-  #home-trampos{
-    .grid{
-      figure{
-        margin: 0;
-        width: z33.3vw;
-        height: 33vh;
-      }
-    }
-  }
-
-  #midias-videos-home{
+   #midias-videos-home{
     .effect-bubba{
       width: 50%;
       height: 26vw;

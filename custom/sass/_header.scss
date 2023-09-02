@@ -339,6 +339,12 @@ header#masthead {
 
 }
 
+.menu-bars-fullscreen {
+  position: fixed;
+  right: 0;
+  top: -7em;
+}
+
 @media (min-width: $screen-sm-min) {
   .navbar-brand {
     a {
@@ -348,10 +354,6 @@ header#masthead {
       }
     }
   }
-  
-  .menu-bars-fullscreen .menu {
-    top: -102px;
-  }
 
   .menu-desktop {
     height: auto !important;
@@ -360,10 +362,6 @@ header#masthead {
 
   .menu-bars-fullscreen {
     display: none;
-  }
-
-  .menu-bars-fullscreen .menu {
-    top: -100px;
   }
 
   .site-header {
