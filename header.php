@@ -170,14 +170,5 @@
           </div>
         </header>
 
-        <div id="content" class="site-content">
-          <div class="container">
-            <div class="row">
-              <?php endif; ?>
-            </div>
-          </div>
-        </div>
-      </div>
-    </body>
-  </html>
-</div>
+        <?php endif; ?>
+            

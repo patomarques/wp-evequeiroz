@@ -22,9 +22,9 @@ get_header(); ?>
             $photo_me   = "";
 
             // query for the about page
-            $your_query = new WP_Query( 'pagename=home' );
+            $homeQuery = new WP_Query( 'pagename=home' );
             // "loop" through query (even though it's just one page)
-            while ( $your_query->have_posts() ) : $your_query->the_post();
+            while ( $homeQuery->have_posts() ) : $homeQuery->the_post();
                 $about_me   = get_the_content();
                 $photo_me   = get_the_post_thumbnail();
             endwhile;
@@ -39,7 +39,7 @@ get_header(); ?>
                 </div>
                 <div class="col-sm-12 text-center">
                     <p class="text-medium">
-                        <?//= $about_me ?>
+                        <?= $about_me ?>
                     </p>
                     <a href="<?php echo get_site_url(); ?>/sobre-mim" class="button-effect">Continue Lendo...</a>
                 </div>

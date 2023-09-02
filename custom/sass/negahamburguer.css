@@ -229,7 +229,7 @@ textarea.wpcf7-not-valid{
   background-color: #FFFFFF;
   font-size: 12px !important;
   font-family: "Dosis", serif;
-  padding: 14px 26px;
+  padding: 12px 20px;
   border-radius: 0 !important;
 }
 
@@ -1133,6 +1133,10 @@ body {
   margin-top: 20px;
   margin-bottom: 50px;
   display: block;
+}
+
+.content-section p {
+  font-size: 1.4em;
 }
 
 .grid {
