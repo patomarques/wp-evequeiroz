@@ -200,13 +200,13 @@ header#masthead {
     a {
       @extend .trans;
       font-size: 18px;
-      font-family: $title-menu  !important;
-      color: $preto  !important;
+      font-family: $title-menu;
+      color: $preto;
       font-weight: 400;
       position: relative;
 
       &:hover {
-        color: $dourado  !important;
+        color: $dourado;
         text-decoration: line-through;
 
         /*background: url('../img/tag.png');*/
@@ -295,6 +295,10 @@ header#masthead {
 }
 
 @media (max-width: $screen-xs-max) {
+  .menu-bars-fullscreen {
+    top: -92px;
+  }
+
   #home-quem-sou {
     margin-top: 0 !important;
   }
@@ -308,15 +312,14 @@ header#masthead {
   }
 
   .navbar-brand {
-    margin: 0;
-
     a {
       img {
-        width: 100%;
+        max-width: 80%;
+        margin: 0;
       }
     }
   }
-
+  
   .navbar-light {
     .navbar-toggler {
       text-align: center;
@@ -327,41 +330,35 @@ header#masthead {
   }
 
   #menu-menu-header {
-    background-color: $preto  !important;
+    background-color: $preto;
 
     li {
       a {
-        color: $branco  !important;
+        color: $branco;
       }
     }
   }
-
-
 }
 
-.menu-bars-fullscreen {
-  position: fixed;
-  right: 0;
-  top: -7em;
+@media (min-width: $screen-xs-min) {
+  .menu-bars-fullscreen {
+    top: -104px;
+  }
+
+  #menu-menu-header {
+    li {
+      a {
+        font-size: 2.2em;
+        color: $branco;
+      }
+    }
+  }
 }
 
 @media (min-width: $screen-sm-min) {
-  .navbar-brand {
-    a {
-      img {
-        max-width: 80%;
-        margin: 15px auto 0;
-      }
-    }
-  }
-
   .menu-desktop {
     height: auto !important;
     padding-top: 0 !important;
-  }
-
-  .menu-bars-fullscreen {
-    display: none;
   }
 
   .site-header {
@@ -376,16 +373,12 @@ header#masthead {
     right: 0 !important;
   }
 
-  .navbar-toggler {
-    display: none !important;
-  }
+  // .navbar-toggler {
+  //   display: none !important;
+  // }
 
   #menu-menu-header {
-    background-color: #ffffff !important;
-  }
-
-  #menu-menu-header li a {
-    color: #000000 !important;
+    background-color: #ffffff;
   }
 
   #menu-menu-header li .dropdown-menu {
@@ -403,7 +396,6 @@ header#masthead {
       float: none;
       margin: 12px auto;
     }
-
   }
 
   .navbar-brand {
@@ -415,10 +407,9 @@ header#masthead {
       img {
         width: 100%;
         max-width: 320px;
-        margin: 10px auto 0 auto;
+        margin: 0;
         display: block;
       }
-
     }
   }
 
@@ -433,11 +424,11 @@ header#masthead {
 
   #menu-menu-header {
     width: 100%;
-    background-color: $preto  !important;
+    background-color: $preto;
 
     li {
       a {
-        color: $branco  !important;
+        color: $branco;
       }
     }
   }
@@ -451,7 +442,6 @@ header#masthead {
 }
 
 @media (min-width: $screen-md-min) {
-
   #masthead {
     nav {
       display: block;
@@ -467,19 +457,19 @@ header#masthead {
   }
 
   #menu-menu-header {
-    background-color: $branco  !important;
+    background-color: $branco;
 
     li {
       a {
-        color: $preto  !important;
+        color: $preto;
       }
 
       .dropdown-menu {
-        background-color: $branco  !important;
+        background-color: $branco;
 
         li {
           a {
-            background-color: $branco  !important;
+            background-color: $branco;
           }
         }
       }

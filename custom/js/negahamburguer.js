@@ -1,5 +1,17 @@
 jQuery(document).ready(function( $ ) {
 
+    $('.menu-bars-fullscreen').on('click', function(e){
+        e.preventDefault();
+        console.log('menu click');
+        //$('.menu-fullscreen').toggleClass('d-none');
+        //$("#menu-bars-fullscreen").checked();
+        // var $checkbox = $(this).find(':checkbox');
+        // $checkbox.prop("checked", !$checkbox.prop("checked"));
+
+        $(".menu-full-custom").toggleClass("open");  
+        return;
+    });
+
     if($('.home-banner-video').length > 0) {
         var alturaContent = $('.home-banner-video').height();
 

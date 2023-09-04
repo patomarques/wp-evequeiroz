@@ -29,6 +29,22 @@
     <body <?php body_class(); ?>
       >
 
+      <div class="menu-fullscreen d-none">
+        
+      </div>
+
+      <nav class="menu-full-custom"> 
+      <?php
+          wp_nav_menu(array(
+              'theme_location'    =>
+              'primary', 'container' => 'menu-header-mobile',
+              'container_id' => '', 'container_class' => '', 'menu_id' =>
+              false, 'menu_class' => 'navbar-nav menu-mobile', 'depth' =>
+              3, 'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+              'walker' => new wp_bootstrap_navwalker() )); 
+        ?>
+      </nav> 
+
       <div id="page" class="site">
         <a class="skip-link screen-reader-text" href="#content"
           ><?php esc_html_e('Skip to content', 'wp-bootstrap-starter'); ?></a
@@ -41,7 +57,7 @@
           class="site-header navbar-static-top"
           role="banner"
         >
-          <div class="full-top-bar d-none d-lg-block">
+          <div class="full-top-bar d-none">
             <div class="container">
               <div class="row">
                 <div class="col-xs-12 text-right hidden">
@@ -105,50 +121,10 @@
 
               </div>
 
-              <div class="col-sm-3 d-md-none">
+              <div class="col-sm-3 d-lg-none">
                 <label class="menu-bars-fullscreen">
-                  <input type="checkbox" />
-                  <span class="menu"> <span class="hamburger"></span> </span>
-                  <div class="menu-fullscreen">
-                    <?php
-                      wp_nav_menu(array(
-                          'theme_location'    =>
-                          'primary', 'container' => 'menu-menu-header-mobile',
-                          'container_id' => '', 'container_class' => '', 'menu_id' =>
-                          false, 'menu_class' => 'navbar-nav menu-mobile', 'depth' =>
-                          3, 'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-                          'walker' => new wp_bootstrap_navwalker() )); 
-                    ?>
-
-                    <ul class="list-inline list-social-icons list-social-icons-mobile hidden">
-                      <li class="list-inline-item">
-                        <a
-                          target="_blank"
-                          href="https://pt-br.facebook.com/olanegahamburguer/"
-                          title="Facebook"
-                          ><i class="fa fa-facebook" aria-hidden="true"></i
-                        ></a>
-                      </li>
-                      <li class="list-inline-item">
-                        <a
-                          target="_blank"
-                          href="https://www.instagram.com/evequeiroz__/"
-                          title="Instagram"
-                          ><i class="fa fa-instagram" aria-hidden="true"></i
-                        ></a>
-                      </li>
-                      <li class="list-inline-item">
-                        <a
-                          href="http://evequeiroz.iluria.com/"
-                          title="Loja Online"
-                          ><i class="fa fa-shopping-cart" aria-hidden="true"></i
-                        ></a>
-                      </li>
-                      <li class="list-inline-item hidden">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                      </li>
-                    </ul>
-                  </div>
+                  <input type="checkbox" id="menu-bars-fullscreen" />
+                  <span class="menu"> <span class="hamburger"></span> </span>                  
                 </label>
               </div>
 
