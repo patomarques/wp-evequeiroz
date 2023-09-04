@@ -106,7 +106,9 @@ get_header(); ?>
         </a>
     </div>
 </section>
+
 </div>
+
 
     <script src="<?php echo get_template_directory_uri(); ?>/custom/libs/tilt.js/src/tilt.jquery.js"></script>
     <script>
