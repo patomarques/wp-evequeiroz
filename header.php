@@ -29,19 +29,21 @@
     <body <?php body_class(); ?>
       >
 
-      <div class="menu-fullscreen d-none">
-        
-      </div>
-
       <nav class="menu-full-custom"> 
-      <?php
+        <div class="menu-bars-fullscreen">
+          <span class="menu"> 
+            <span class="hamburger"></span> 
+          </span>                  
+        </div>
+
+        <?php
           wp_nav_menu(array(
-              'theme_location'    =>
-              'primary', 'container' => 'menu-header-mobile',
-              'container_id' => '', 'container_class' => '', 'menu_id' =>
-              false, 'menu_class' => 'navbar-nav menu-mobile', 'depth' =>
-              3, 'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-              'walker' => new wp_bootstrap_navwalker() )); 
+            'theme_location'    =>
+            'primary', 'container' => 'menu-header-mobile',
+            'container_id' => '', 'container_class' => '', 'menu_id' =>
+            false, 'menu_class' => 'navbar-nav menu-mobile', 'depth' =>
+            3, 'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+            'walker' => new wp_bootstrap_navwalker() )); 
         ?>
       </nav> 
 
@@ -99,7 +101,7 @@
 
           <div class="container">
             <div class="row">
-              <div class="col-sm-9 col-lg-4">
+              <div class="col-sm-8 col-lg-4">
                 <div class="navbar-brand">
                   <?php if (get_theme_mod('wp_bootstrap_starter_logo')) : ?>
                   <a href="<?php echo esc_url(home_url('/')); ?>">
@@ -121,11 +123,12 @@
 
               </div>
 
-              <div class="col-sm-3 d-lg-none">
-                <label class="menu-bars-fullscreen">
-                  <input type="checkbox" id="menu-bars-fullscreen" />
-                  <span class="menu"> <span class="hamburger"></span> </span>                  
-                </label>
+              <div class="col-sm-4 d-lg-none">
+                <div class="menu-bars-fullscreen">
+                  <span class="menu"> 
+                    <span class="hamburger"></span> 
+                  </span>                  
+                </div>
               </div>
 
               <div class="col-lg-8 d-none d-md-block text-right">

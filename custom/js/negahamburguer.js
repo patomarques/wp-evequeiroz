@@ -3,12 +3,10 @@ jQuery(document).ready(function( $ ) {
     $('.menu-bars-fullscreen').on('click', function(e){
         e.preventDefault();
         console.log('menu click');
-        //$('.menu-fullscreen').toggleClass('d-none');
-        //$("#menu-bars-fullscreen").checked();
-        // var $checkbox = $(this).find(':checkbox');
-        // $checkbox.prop("checked", !$checkbox.prop("checked"));
 
+        $('.menu-bars-fullscreen').toggleClass("clicked");
         $(".menu-full-custom").toggleClass("open");  
+
         return;
     });
 
