@@ -36,7 +36,11 @@
                  <?php echo '<a href="'.home_url().'">'.get_bloginfo('name').'</a>'; ?> <!--®--> <i class="fa fa-heart ml-1 mr-1"></i> <?php echo date('Y'); ?>
             </div>
             <div class="pull-right dev-sign">
+<<<<<<< HEAD
                 <span class="devby">desenvolvido por</span> <a href="http://patomarques.com" class="link-devby" target="_blank">pato marques</a>
+=======
+                <span class="devby">desenvolvido por</span> <a href="http://patomarques.com.br" class="link-devby" target="_blank">pato marques</a>
+>>>>>>> main
             </div>
         </div>
 		</div>

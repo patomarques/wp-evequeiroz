@@ -4,10 +4,10 @@
  * The header for our theme
  *
  * This is the template that displays all of the <head>
-section and everything up until
-<div id="content">
+ * section and everything up until
+ * <div id="content">
   * * @link
-  https://developer.wordpress.org/themes/basics/template-files/#template-partials
+  * * https://developer.wordpress.org/themes/basics/template-files/#template-partials
   * * @package WP_Bootstrap_Starter */ ?>
   <!DOCTYPE html>
   <html <?php language_attributes(); ?>
@@ -29,6 +29,24 @@ section and everything up until
     <body <?php body_class(); ?>
       >
 
+      <nav class="menu-full-custom"> 
+        <div class="menu-bars-fullscreen">
+          <span class="menu"> 
+            <span class="hamburger"></span> 
+          </span>                  
+        </div>
+
+        <?php
+          wp_nav_menu(array(
+            'theme_location'    =>
+            'primary', 'container' => 'menu-header-mobile',
+            'container_id' => '', 'container_class' => '', 'menu_id' =>
+            false, 'menu_class' => 'navbar-nav menu-mobile', 'depth' =>
+            3, 'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+            'walker' => new wp_bootstrap_navwalker() )); 
+        ?>
+      </nav> 
+
       <div id="page" class="site">
         <a class="skip-link screen-reader-text" href="#content"
           ><?php esc_html_e('Skip to content', 'wp-bootstrap-starter'); ?></a
@@ -36,18 +54,14 @@ section and everything up until
 
         <?php if (!is_page_template('blank-page.php') && !is_page_template('blank-page-with-container.php')) : ?>
 
-		
-
         <header
-          id="masthead"
           class="site-header navbar-static-top"
           role="banner"
         >
-          <div class="full-top-bar d-none d-lg-block">
+          <div class="full-top-bar d-none">
             <div class="container">
               <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-6"></div>
-                <div class="col-xs-12 col-sm-12 col-md-6 text-right">
+                <div class="col-xs-12 text-right hidden">
                   <ul class="list-inline list-top-social-icons mb-0">
                     <li class="list-inline-item">
                       <a
@@ -60,7 +74,7 @@ section and everything up until
                     <li class="list-inline-item">
                       <a
                         target="_blank"
-                        href="https://www.instagram.com/evequeiroz__/"
+                        href="https://www.instagram.com/evequeiroz___/"
                         title="Instagram"
                         ><i class="fa fa-instagram" aria-hidden="true"></i
                       ></a>
@@ -68,8 +82,8 @@ section and everything up until
                     <!--<li class="list-inline-item"><a href="#" title="whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>-->
                     <li class="list-inline-item">
                       <a
-                        href="http://evequeiroz.iluria.com/"
-						target="_blank"
+                        href="https://evequeiroz.minhalojanouol.com.br/"
+								target="_blank"
                         title="Loja Online"
                         ><i class="fa fa-shopping-cart" aria-hidden="true"></i
                       ></a>
@@ -86,7 +100,7 @@ section and everything up until
 
           <div class="container">
             <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+              <div class="col-sm-8 col-lg-4">
                 <div class="navbar-brand">
                   <?php if (get_theme_mod('wp_bootstrap_starter_logo')) : ?>
                   <a href="<?php echo esc_url(home_url('/')); ?>">
@@ -104,75 +118,35 @@ section and everything up until
                   <?php endif; ?>
                 </div>
 
-                <label class="menu-bars-fullscreen">
-                  <input type="checkbox" />
-                  <span class="menu"> <span class="hamburger"></span> </span>
-                  <div class="menu-fullscreen">
-                    <?php
-                                    wp_nav_menu(array(
-                                        'theme_location'    =>
-                    'primary', 'container' => 'menu-menu-header-mobile',
-                    'container_id' => '', 'container_class' => '', 'menu_id' =>
-                    false, 'menu_class' => 'navbar-nav menu-mobile', 'depth' =>
-                    3, 'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-                    'walker' => new wp_bootstrap_navwalker() )); ?>
-                    <ul class="list-inline list-social-icons list-social-icons-mobile">
-                      <li class="list-inline-item">
-                        <a
-                          target="_blank"
-                          href="https://pt-br.facebook.com/olanegahamburguer/"
-                          title="Facebook"
-                          ><i class="fa fa-facebook" aria-hidden="true"></i
-                        ></a>
-                      </li>
-                      <li class="list-inline-item">
-                        <a
-                          target="_blank"
-                          href="https://www.instagram.com/evequeiroz__/"
-                          title="Instagram"
-                          ><i class="fa fa-instagram" aria-hidden="true"></i
-                        ></a>
-                      </li>
-                      <li class="list-inline-item">
-                        <a
-                          href="http://evequeiroz.iluria.com/"
-                          title="Loja Online"
-                          ><i class="fa fa-shopping-cart" aria-hidden="true"></i
-                        ></a>
-                      </li>
-                      <li class="list-inline-item hidden">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                      </li>
-                    </ul>
-                  </div>
-                </label>
+               
+
               </div>
 
-              <div class="col-lg-8 d-none d-md-block text-right">
+              <div class="col-sm-4 d-lg-none">
+                <div class="menu-bars-fullscreen">
+                  <span class="menu"> 
+                    <span class="hamburger"></span> 
+                  </span>                  
+                </div>
+              </div>
+
+              <div class="col-lg-8 d-none d-lg-block text-right">
                 <nav class="navbar navbar-toggleable-md navbar-light">
                   <?php
-                                        wp_nav_menu(array(
-                                            'theme_location'    =>
-                  'primary', 'container' => 'div', 'container_id' =>
-                  'menu-menu-header', 'container_class' => 'collapse
-                  navbar-collapse justify-content-end menu-desktop', 'menu_id'
-                  => false, 'menu_class' => 'navbar-nav', 'depth' => 3,
-                  'fallback_cb' => 'wp_bootstrap_navwalker::fallback', 'walker'
-                  => new wp_bootstrap_navwalker() )); ?>
+                    wp_nav_menu(array(
+                      'theme_location'    =>
+                      'primary', 'container' => 'div', 'container_id' =>
+                      'menu-menu-header', 'container_class' => 'collapse
+                      navbar-collapse justify-content-end menu-desktop', 'menu_id'
+                      => false, 'menu_class' => 'navbar-nav', 'depth' => 3,
+                      'fallback_cb' => 'wp_bootstrap_navwalker::fallback', 'walker'
+                      => new wp_bootstrap_navwalker() )); 
+                  ?>
                 </nav>
               </div>
             </div>
           </div>
         </header>
 
-        <div id="content" class="site-content">
-          <div class="container">
-            <div class="row">
-              <?php endif; ?>
-            </div>
-          </div>
-        </div>
-      </div>
-    </body>
-  </html>
-</div>
+        <?php endif; ?>
+            

@@ -35,15 +35,27 @@ body{
   border-radius: 10px;
 }
 
+.text-medium {
+  font-size: 1.5em;
+}
+
+.hide{
+  display: none;
+}
+
 #page{
   display: block;
   position: relative;
 }
 
-.site{
-  /*position: relative !important;
-  z-index: 50 !important;*/
+.content-full {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: relative;
 }
+
 .down-arrow{
   color: $branco;
   width: 50px;
@@ -58,13 +70,17 @@ body{
   margin-top: 20px;
   margin-bottom: 50px;
   display: block;
+
+  p {
+    font-size: 1.4em;
+  }
 }
 
-/* EFFECT GRID*/
 .grid {
+  width: 100vw;
   position: relative;
   margin: 0 auto;
-  padding: 1em 0 4em;
+  padding: 0;
   list-style: none;
   text-align: center;
 
@@ -72,15 +88,18 @@ body{
     position: relative;
     float: left;
     overflow: hidden;
-    margin: 10px 0;
-    /*min-width: 320px;
-    max-width: 480px;
-    max-height: 360px;*/
-    width: 25%;
-    height: 25vw;
+    margin: 0;
+    // width: 25%;
+    height: 60vh;
     background: $preto;
     text-align: center;
     cursor: pointer;
+
+    &:after {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
 
     video,
     img{
@@ -314,9 +333,6 @@ figure.effect-bubba:hover p {
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
 }
-/* # # # #
-# # # # # # contato
-# # # #*/
 .title-main{
   margin-bottom: 80px;
   display: block;
@@ -521,12 +537,6 @@ span.wpcf7-not-valid-tip{
   display: none;
 }
 
-
-div.wpcf7-mail-sent-ng,
-div.wpcf7-aborted{
-
-}
-
 div.wpcf7-response-output{
   margin: 0;
   padding: 20px;
@@ -682,6 +692,31 @@ div.wpcf7-response-output{
       &:before{
         @extend .trans;
       }
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min){
+  .grid {
+    figure {
+      width: 100vw;
+    }
+  }
+}
+
+@media (min-width: $screen-md-min){
+  .grid {
+    figure {
+      width: calc(100vw/3);
+      height: 35vh;
+    }
+  }
+}
+
+@media (min-width: $screen-lg-min){
+  .grid {
+    figure {
+      height: 50vh;
     }
   }
 }

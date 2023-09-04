@@ -2,7 +2,11 @@
 
 <?php
 global $numposts;
+<<<<<<< HEAD
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+=======
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+>>>>>>> main
 $args = array(
     'post_type' => 'post',
     'post_status' => 'publish',
@@ -11,7 +15,11 @@ $args = array(
     'posts_per_page' => $numposts,
     'paged' => $paged
 );
+<<<<<<< HEAD
 $posts = new WP_Query($args); ?>
+=======
+$posts = new WP_Query( $args ); ?>
+>>>>>>> main
 
 <div class="content-main">
     <div class="container">
@@ -20,11 +28,22 @@ $posts = new WP_Query($args); ?>
                 <h1 class="title-tag">Blog</h1>
             </div>
         </div>
+<<<<<<< HEAD
+=======
+      <!--  <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <br><br><br><br><br><br>
+                <h2>Em Desenvolvimento</h2>
+                <br><br><br><br><br><br><br>
+            </div>
+        </div>-->
+>>>>>>> main
 
         <div class="container">
             <div class="row">
                 <div class="list-postagens grid">
 
+<<<<<<< HEAD
                     <?php while ($posts->have_posts()) : $posts->the_post(); ?>
                         <div class="box-post grid-item">
                             <a class="imagem" href="<?php echo the_permalink(); ?>" style="background-image: url('<?php echo the_post_thumbnail_url() ?>');">
@@ -57,6 +76,40 @@ $posts = new WP_Query($args); ?>
                         </div>
 
                     <?php endwhile; ?>
+=======
+                <?php while ( $posts->have_posts() ) : $posts->the_post(); ?>
+                    <div class="box-post grid-item">
+                        <a class="imagem" href="<?php echo the_permalink(); ?>" style="background-image: url('<?php echo the_post_thumbnail_url() ?>');">
+                            <?php if(has_post_thumbnail()){ ?>
+                                <?php the_post_thumbnail('post-thumbnail', array('class' => 'default-imagem zoom')); ?>
+                            <?php }else{ ?>
+                                <img src="<?php echo get_template_directory_uri(); ?>/custom/img/nebulosa.jpg" alt="" class="default-imagem zoom">
+                            <?php } ?>
+                        </a>
+
+                        <div class="content-post">
+                            <a href="<?php echo the_permalink(); ?>" class="title-post">
+                                <?php echo the_title(); ?>
+                            </a>
+                            <span class="data-postagem"><i class="fa fa-clock-o"></i> <?php echo get_the_date(); ?></span>
+                            <!--<span class="categoria">
+                                <?php /*if(sizeof(get_the_category()) > 0){ */?>
+                                    <ul class="list-categorias list-inline">
+                                        <li class="item-inline"><b>Categoria:</b></li>
+                                        <?php /*foreach(get_the_category() AS $cat){ */?>
+                                            <li><?php /*print_r($cat->cat_name); */?></li>
+                                        <?php /*} */?>
+                                    </ul>
+                                <?php /*} */?>
+                            </span>-->
+                            <div class="resumo text-center"><?php echo get_the_excerpt(); ?></div>
+
+                            <a href="<?php echo the_permalink(); ?>" class="button-effect continue-read">Continuar Lendo ...</a>
+                        </div>
+                    </div>
+
+                <?php endwhile; ?>
+>>>>>>> main
                 </div>
             </div>
             <div class="row">
@@ -69,8 +122,14 @@ $posts = new WP_Query($args); ?>
 </div>
 
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/isotope-layout/dist/isotope.pkgd.min.js"></script>
+<<<<<<< HEAD
 <script>
     /*  jQuery(window).load(function( $ ) {
+=======
+    <script>
+
+      /*  jQuery(window).load(function( $ ) {
+>>>>>>> main
             var $grid = $('.grid').isotope({
                 // main isotope options
                 itemSelector: '.grid-item',
@@ -87,6 +146,7 @@ $posts = new WP_Query($args); ?>
                 }
             })
         });*/
+<<<<<<< HEAD
     jQuery(window).load(function($) {
         var elem = document.querySelector('.grid');
         var iso = new Isotope(elem, {
@@ -102,4 +162,21 @@ $posts = new WP_Query($args); ?>
         });
     });
 </script>
+=======
+      jQuery(window).load(function( $ ) {
+          var elem = document.querySelector('.grid');
+          var iso = new Isotope( elem, {
+              // options
+              itemSelector: '.grid-item',
+              layoutMode: 'fitRows'
+          });
+
+          // element argument can be a selector string
+          //   for an individual element
+          var iso = new Isotope( '.grid', {
+              // options
+          });
+      });
+    </script>
+>>>>>>> main
 <?php get_footer(); ?>

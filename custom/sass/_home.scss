@@ -380,13 +380,18 @@ section.home-banner-video {
 
   #midias-videos-home{
     .effect-bubba{
+<<<<<<< HEAD
       width: 100%;
+=======
+      width: 100%; 
+>>>>>>> main
       height: 65vw;
     }
   }
 }
 @media (min-width: $screen-xs-min){
 
+<<<<<<< HEAD
 
   #home-trampos{
     .grid{
@@ -397,10 +402,13 @@ section.home-banner-video {
       }
     }
   }
+=======
+>>>>>>> main
 }
 
 @media (min-width: $screen-sm-min){
 
+<<<<<<< HEAD
 
 
   #home-trampos{
@@ -412,6 +420,8 @@ section.home-banner-video {
       }
     }
   }
+=======
+>>>>>>> main
 }
 
 @media (min-width: $screen-md-min){
@@ -429,6 +439,7 @@ section.home-banner-video {
 }
 
 @media (min-width: $screen-lg-min){
+<<<<<<< HEAD
   #home-trampos{
     .grid{
       figure{
@@ -440,6 +451,9 @@ section.home-banner-video {
   }
 
   #midias-videos-home{
+=======
+   #midias-videos-home{
+>>>>>>> main
     .effect-bubba{
       width: 50%;
       height: 26vw;

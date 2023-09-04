@@ -1,5 +1,15 @@
 jQuery(document).ready(function( $ ) {
 
+    $('.menu-bars-fullscreen').on('click', function(e){
+        e.preventDefault();
+        console.log('menu click');
+
+        $('.menu-bars-fullscreen').toggleClass("clicked");
+        $(".menu-full-custom").toggleClass("open");  
+
+        return;
+    });
+
     if($('.home-banner-video').length > 0) {
         var alturaContent = $('.home-banner-video').height();
 
