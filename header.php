@@ -55,7 +55,6 @@
         <?php if (!is_page_template('blank-page.php') && !is_page_template('blank-page-with-container.php')) : ?>
 
         <header
-          id="masthead"
           class="site-header navbar-static-top"
           role="banner"
         >
@@ -131,7 +130,7 @@
                 </div>
               </div>
 
-              <div class="col-lg-8 d-none d-md-block text-right">
+              <div class="col-lg-8 d-none d-lg-block text-right">
                 <nav class="navbar navbar-toggleable-md navbar-light">
                   <?php
                     wp_nav_menu(array(
