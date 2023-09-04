@@ -109,6 +109,7 @@ get_header(); ?>
 
 </div>
 
+    <?php get_template_part('template-parts/content-blog'); ?>
 
     <script src="<?php echo get_template_directory_uri(); ?>/custom/libs/tilt.js/src/tilt.jquery.js"></script>
     <script>

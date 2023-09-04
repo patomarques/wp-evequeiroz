@@ -2,26 +2,17 @@
 @import url('https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Rock+Salt|Zilla+Slab+Highlight');
 @import url('https://fonts.googleapis.com/css?family=Economica:400,700');
 
-/*@include font-face(Adrip1, fonts/adrip1);*/
 @font-face {
   font-family: "Adrip1";
   src: url("../fonts/adrip1.ttf?") format("truetype")
-  /*src: url("fonts/Samplino.eot?") format("eot")*/
-  /*url("fonts/Samplino.woff2") format("woff2"),
-  url("fonts/Samplino.woff") format("woff"),
-  url("fonts/Samplino.ttf") format("truetype"),
-  url("fonts/Samplino.svg#Samplino") format("svg");*/
+  
 }
 
 $font-title: 'Dosis', sans-serif;
 $font-adrip: 'Adrip1', cursive;
 
-/*$font-default: 'Neucha', cursive;*/
 $font-default: 'Dosis', serif;
 $font-title-main: 'Rock Salt', cursive;
-/*
-+   Titles, subtitles and anything
-*/
 
 $font-poret: 'Poiret One', cursive;
 $font-badscript: 'Bad Script', cursive;
@@ -31,14 +22,14 @@ $title-menu: 'Economica', sans-serif;
 $title-midia: $font-badscript;
 
 .title-medjium{
-  font-size: 30px;
+  font-size: 2em;
   margin-bottom: 50px;
 }
 
 .title-main{
   font-family: $font-title-main;
   text-transform: lowercase;
-  font-size: 32px !important;
+  font-size: 2em !important;
 }
 
 .title-midia{
@@ -92,7 +83,6 @@ $title-midia: $font-badscript;
     color: $dourado;
 
     &:after{
-      /*background-color: $preto;*/
       width: 100px;
     }
   }
@@ -117,4 +107,3 @@ $title-midia: $font-badscript;
     margin: 25px auto -5px;
   }
 }
-
