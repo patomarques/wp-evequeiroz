@@ -199,9 +199,8 @@ header#masthead {
 
     a {
       @extend .trans;
-      font-size: 18px;
       font-family: $title-menu;
-      color: $preto;
+      
       font-weight: 400;
       position: relative;
 
@@ -462,6 +461,7 @@ header#masthead {
     li {
       a {
         color: $preto;
+        font-size: 2.2em;
       }
 
       .dropdown-menu {
