@@ -89,7 +89,6 @@ body{
     float: left;
     overflow: hidden;
     margin: 0;
-    // width: 25%;
     height: 60vh;
     background: $preto;
     text-align: center;
@@ -333,7 +332,6 @@ figure.effect-bubba:hover p {
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
 }
-
 .title-main{
   margin-bottom: 80px;
   display: block;
@@ -398,7 +396,6 @@ figure.effect-bubba:hover p {
   background: transparent;
 }
 
-/* PAGE: MIDIA */
 .list-midia{
   margin: 0 !important;
   padding: 0 !important;
@@ -553,22 +550,6 @@ div.wpcf7-response-output{
   margin-top: 50px;
   margin-bottom: 50px;
 }
-/*
-
-#page{
-  position: relative;
-  z-index: 50;
-}
-
-.site-footer{
-  position: fixed;
-  width: 100%;
-
-  z-index: -1;
-  bottom: 0;
-  left: 0;
-}*/
-
 
 .pagination {
   clear:both;
@@ -642,7 +623,6 @@ div.wpcf7-response-output{
       font-size: 14px;
     }
   }
-
 }
 
 .post{

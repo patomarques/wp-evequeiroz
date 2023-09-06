@@ -20,13 +20,6 @@ $posts = new WP_Query( $args ); ?>
                 <h1 class="title-tag">Blog</h1>
             </div>
         </div>
-      <!--  <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <br><br><br><br><br><br>
-                <h2>Em Desenvolvimento</h2>
-                <br><br><br><br><br><br><br>
-            </div>
-        </div>-->
 
         <div class="container">
             <div class="row">
@@ -77,24 +70,6 @@ $posts = new WP_Query( $args ); ?>
 
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/isotope-layout/dist/isotope.pkgd.min.js"></script>
     <script>
-
-      /*  jQuery(window).load(function( $ ) {
-            var $grid = $('.grid').isotope({
-                // main isotope options
-                itemSelector: '.grid-item',
-                // set layoutMode
-                layoutMode: 'cellsByRow',
-                // options for cellsByRow layout mode
-                cellsByRow: {
-                    columnWidth: 200,
-                    rowHeight: 150
-                },
-                // options for masonry layout mode
-                masonry: {
-                    columnWidth: '.grid-item'
-                }
-            })
-        });*/
       jQuery(window).load(function( $ ) {
           var elem = document.querySelector('.grid');
           var iso = new Isotope( elem, {

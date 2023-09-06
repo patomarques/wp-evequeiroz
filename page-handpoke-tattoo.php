@@ -24,7 +24,6 @@
     </div>
 </div>
 
-
 <script src="<?php echo get_template_directory_uri(); ?>/bower_components/isotope-layout/dist/isotope.pkgd.min.js">
 </script>
 <!--<script src="<?php /*echo get_template_directory_uri(); */?>/bower_components/packery/dist/packery.pkgd.min.js"></script>-->

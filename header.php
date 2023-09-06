@@ -117,9 +117,6 @@
                   >
                   <?php endif; ?>
                 </div>
-
-               
-
               </div>
 
               <div class="col-sm-4 d-lg-none">
@@ -149,4 +146,3 @@
         </header>
 
         <?php endif; ?>
-            
