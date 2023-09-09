@@ -4,46 +4,58 @@
 *:after {
   box-sizing: border-box;
 }
+
 .clearfix:after {
   content: "";
   display: table;
   clear: both;
 }
 
-body{
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
   overflow-x: hidden !important;
   z-index: 10;
   position: relative;
 }
 
-::-webkit-scrollbar
-{
-  width: 12px;  /* for vertical scrollbars */
-  height: 12px; /* for horizontal scrollbars */
+::-webkit-scrollbar {
+  width: 12px;
+  /* for vertical scrollbars */
+  height: 12px;
+  /* for horizontal scrollbars */
 
 }
 
-::-webkit-scrollbar-track
-{
+::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.1);
 }
 
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 1);
   -webkit-border-radius: 10px;
   border-radius: 10px;
+}
+
+
+.content-main {
+  width: 100%;
+  margin-top: 50px;
 }
 
 .text-medium {
   font-size: 1.5em;
 }
 
-.hide{
+.hide {
   display: none;
 }
 
-#page{
+#page {
   display: block;
   position: relative;
 }
@@ -56,17 +68,17 @@ body{
   position: relative;
 }
 
-.down-arrow{
+.down-arrow {
   color: $branco;
   width: 50px;
-  fill: $branco !important;
+  fill: $branco  !important;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
-.content-section{
+.content-section {
   margin-top: 20px;
   margin-bottom: 50px;
   display: block;
@@ -77,14 +89,14 @@ body{
 }
 
 .grid {
-  width: 100vw;
+  width: 100%;
   position: relative;
   margin: 0 auto;
   padding: 0;
   list-style: none;
   text-align: center;
 
-  figure{
+  figure {
     position: relative;
     float: left;
     overflow: hidden;
@@ -101,7 +113,7 @@ body{
     }
 
     video,
-    img{
+    img {
       position: relative;
       display: block;
       min-height: 100%;
@@ -126,7 +138,7 @@ body{
 }
 
 .grid figure figcaption,
-.grid figure figcaption > a {
+.grid figure figcaption>a {
   position: absolute;
   top: 0;
   left: 0;
@@ -136,7 +148,7 @@ body{
 
 /* Anchor will cover the whole item by default */
 /* For some effects it will show as a button */
-.grid figure figcaption > a {
+.grid figure figcaption>a {
   z-index: 50;
   text-indent: 200%;
   white-space: nowrap;
@@ -172,13 +184,13 @@ figure.effect-negahamburguer {
   -webkit-perspective: 1000px;
   perspective: 1000px;
 
-  h2{
+  h2 {
     font-family: $font-default;
     text-transform: capitalize;
     top: 52%;
   }
 
-  p{
+  p {
     top: 48% !important;
     font-size: 22px;
     font-family: $font-default;
@@ -188,14 +200,14 @@ figure.effect-negahamburguer {
 figure.effect-negahamburguer img {
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: translate3d(0,0,300px);
-  transform: translate3d(0,0,300px);
+  -webkit-transform: translate3d(0, 0, 300px);
+  transform: translate3d(0, 0, 300px);
 }
 
 figure.effect-negahamburguer:hover img {
   opacity: 0.6;
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 figure.effect-negahamburguer figcaption::before,
@@ -209,20 +221,20 @@ figure.effect-negahamburguer figcaption::after {
   content: '';
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: translate3d(-50%,-50%,0);
-  transform: translate3d(-50%,-50%,0);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
 }
 
 figure.effect-negahamburguer:hover figcaption::before {
   opacity: 0.5;
-  -webkit-transform: translate3d(-50%,-50%,0) rotate(45deg);
-  transform: translate3d(-50%,-50%,0) rotate(45deg);
+  -webkit-transform: translate3d(-50%, -50%, 0) rotate(45deg);
+  transform: translate3d(-50%, -50%, 0) rotate(45deg);
 }
 
 figure.effect-negahamburguer:hover figcaption::after {
   opacity: 0.5;
-  -webkit-transform: translate3d(-50%,-50%,0) rotate(-45deg);
-  transform: translate3d(-50%,-50%,0) rotate(-45deg);
+  -webkit-transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+  transform: translate3d(-50%, -50%, 0) rotate(-45deg);
 }
 
 figure.effect-negahamburguer h2,
@@ -235,26 +247,26 @@ figure.effect-negahamburguer p {
 }
 
 figure.effect-negahamburguer h2 {
-  -webkit-transform: translate3d(0,-50%,0) translate3d(0,-150%,0);
-  transform: translate3d(0,-50%,0) translate3d(0,-150%,0);
+  -webkit-transform: translate3d(0, -50%, 0) translate3d(0, -150%, 0);
+  transform: translate3d(0, -50%, 0) translate3d(0, -150%, 0);
 }
 
 figure.effect-negahamburguer p {
   padding: 0 2em;
 
 
-  -webkit-transform: translate3d(0,-50%,0) translate3d(0,150%,0);
-  transform: translate3d(0,-50%,0) translate3d(0,150%,0);
+  -webkit-transform: translate3d(0, -50%, 0) translate3d(0, 150%, 0);
+  transform: translate3d(0, -50%, 0) translate3d(0, 150%, 0);
 }
 
 figure.effect-negahamburguer:hover h2 {
-  -webkit-transform: translate3d(0,-50%,0) translate3d(0,-100%,0);
-  transform: translate3d(0,-50%,0) translate3d(0,-100%,0);
+  -webkit-transform: translate3d(0, -50%, 0) translate3d(0, -100%, 0);
+  transform: translate3d(0, -50%, 0) translate3d(0, -100%, 0);
 }
 
 figure.effect-negahamburguer:hover p {
-  -webkit-transform: translate3d(0,-50%,0) translate3d(0,100%,0);
-  transform: translate3d(0,-50%,0) translate3d(0,100%,0);
+  -webkit-transform: translate3d(0, -50%, 0) translate3d(0, 100%, 0);
+  transform: translate3d(0, -50%, 0) translate3d(0, 100%, 0);
 }
 
 /*---------------*/
@@ -291,23 +303,23 @@ figure.effect-bubba figcaption::after {
 figure.effect-bubba figcaption::before {
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
-  -webkit-transform: scale(0,1);
-  transform: scale(0,1);
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
 }
 
 figure.effect-bubba figcaption::after {
   border-right: 1px solid #fff;
   border-left: 1px solid #fff;
-  -webkit-transform: scale(1,0);
-  transform: scale(1,0);
+  -webkit-transform: scale(1, 0);
+  transform: scale(1, 0);
 }
 
 figure.effect-bubba h2 {
   padding-top: 30%;
   -webkit-transition: -webkit-transform 0.35s;
   transition: transform 0.35s;
-  -webkit-transform: translate3d(0,-20px,0);
-  transform: translate3d(0,-20px,0);
+  -webkit-transform: translate3d(0, -20px, 0);
+  transform: translate3d(0, -20px, 0);
 }
 
 figure.effect-bubba p {
@@ -315,8 +327,8 @@ figure.effect-bubba p {
   opacity: 0;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: translate3d(0,20px,0);
-  transform: translate3d(0,20px,0);
+  -webkit-transform: translate3d(0, 20px, 0);
+  transform: translate3d(0, 20px, 0);
 }
 
 figure.effect-bubba:hover figcaption::before,
@@ -329,23 +341,25 @@ figure.effect-bubba:hover figcaption::after {
 figure.effect-bubba:hover h2,
 figure.effect-bubba:hover p {
   opacity: 1;
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
-.title-main{
+
+.title-main {
   margin-bottom: 80px;
   display: block;
 }
 
-.site-individual{
-  .title-main{
+.site-individual {
+  .title-main {
     display: block;
     text-align: center;
     margin: 50px auto 0;
     position: relative;
-    color: $branco !important;
+    color: $branco  !important;
     z-index: 1;
-    &:after{
+
+    &:after {
       content: '';
       display: block;
       background: url('../img/spray-paint.png') center center no-repeat;
@@ -359,23 +373,24 @@ figure.effect-bubba:hover p {
     }
   }
 
-  form{
+  form {
     margin-bottom: 55px;
   }
 }
 
-.content-text{
+.content-text {
   font-family: $font-default;
   font-size: 24px;
   margin-bottom: 50px;
 }
 
-.about-me{
+.about-me {
   display: block;
   overflow: hidden;
   margin: 40px;
   position: relative;
-  img{
+
+  img {
     height: auto;
     margin: 0 auto;
     display: block;
@@ -385,8 +400,8 @@ figure.effect-bubba:hover p {
   }
 }
 
-#page-sobre{
-  .title-main{
+#page-sobre {
+  .title-main {
     margin-bottom: 50px;
   }
 }
@@ -396,12 +411,12 @@ figure.effect-bubba:hover p {
   background: transparent;
 }
 
-.list-midia{
+.list-midia {
   margin: 0 !important;
   padding: 0 !important;
   text-align: center;
 
-  li{
+  li {
 
     list-style: none;
     text-align: center;
@@ -412,7 +427,7 @@ figure.effect-bubba:hover p {
 
     display: inline-block;
 
-    a{
+    a {
       padding: 20px 25px;
       color: $branco;
       display: block;
@@ -428,82 +443,83 @@ figure.effect-bubba:hover p {
       @extend .trans50;
     }
 
-    &:hover{
+    &:hover {
       opacity: 0.8;
     }
-    
-    &.materia{
+
+    &.materia {
       background-color: $preto;
     }
 
-    &.jornais-e-revistas{
+    &.jornais-e-revistas {
       background-color: $cinza-ciano;
     }
 
-    &.tv{
+    &.tv {
       background-color: $cinza66;
 
     }
   }
 }
 
-#page-midia{
-  .title-midia{
+#page-midia {
+  .title-midia {
     margin-bottom: 20px;
   }
 
-  .list-materias-titles{
+  .list-materias-titles {
     width: 100%;
   }
 }
 
-.list-inline{
+.list-inline {
   display: block;
 
-  .item-inline{
+  .item-inline {
     display: inline-block;
   }
 }
 
-.list-midia-legends{
+.list-midia-legends {
   margin-top: 50px;
   margin-bottom: 50px;
 
-  .title-midia{
+  .title-midia {
     display: inline-block;
 
-    &:before{
-      content:'';
+    &:before {
+      content: '';
       width: 30px;
       height: 25px;
       background-color: $preto;
       display: inline-block;
-      margin: 0 20px -2px 0 ;
+      margin: 0 20px -2px 0;
 
     }
   }
 
-  li{
+  li {
     list-style: none;
-    &:nth-child(1){
-      .title-midia{
-        &:before{
+
+    &:nth-child(1) {
+      .title-midia {
+        &:before {
           background-color: $preto;
         }
       }
     }
 
-    &:nth-child(2){
-      .title-midia{
-        &:before{
+    &:nth-child(2) {
+      .title-midia {
+        &:before {
           background-color: $cinza-ciano;
         }
       }
     }
 
-    &:nth-child(3){
-      .title-midia{
-        &:before{
+    &:nth-child(3) {
+      .title-midia {
+        &:before {
           background-color: $cinza66;
         }
       }
@@ -511,31 +527,31 @@ figure.effect-bubba:hover p {
   }
 }
 
-.video-box{
+.video-box {
   margin-bottom: 25px;
 }
 
-#content.site-content{
+#content.site-content {
   height: auto;
 }
 
-.title-tag{
+.title-tag {
   margin: 0 auto 50px;
   /*text-decoration: underline overline;*/
 }
 
-.wpcf7-not-valid{
+.wpcf7-not-valid {
   background-color: $vermelho-claro;
   outline: none !important;
   box-shadow: 0 0 10px $vermelho;
   font-weight: 700;
 }
 
-span.wpcf7-not-valid-tip{
+span.wpcf7-not-valid-tip {
   display: none;
 }
 
-div.wpcf7-response-output{
+div.wpcf7-response-output {
   margin: 0;
   padding: 20px;
   text-align: center;
@@ -546,108 +562,112 @@ div.wpcf7-response-output{
   font-size: 18px;
 }
 
-#home-quem-sou{
+#home-quem-sou {
   margin-top: 50px;
   margin-bottom: 50px;
 }
 
 .pagination {
-  clear:both;
-  padding:20px 0;
-  position:relative;
+  clear: both;
+  padding: 20px 0;
+  position: relative;
   font-size: 18px;
-  line-height:13px;
+  line-height: 13px;
   text-align: center;
   font-family: $font-title;
   margin: 0 auto;
   display: block;
 
-  .label{
+  .label {
     display: none;
     margin: -8px;
   }
 
-  .buttons{
+  .buttons {
     display: inline-block;
     font-family: $font-title;
 
-    a, .current{
+    a,
+    .current {
       padding: 12px 18px;
     }
   }
 }
 
-.pagination span, .pagination a {
-  display:block;
-  float:left;
+.pagination span,
+.pagination a {
+  display: block;
+  float: left;
   margin: 2px 2px 2px 0;
-  padding:6px 9px 5px 9px;
-  text-decoration:none;
-  width:auto;
-  color:#fff;
+  padding: 6px 9px 5px 9px;
+  text-decoration: none;
+  width: auto;
+  color: #fff;
   background: #555;
   @extend .trans;
 }
 
-.pagination a:hover{
-  color:#fff;
+.pagination a:hover {
+  color: #fff;
   background: $preto;
 }
 
-.pagination .current{
-  padding:6px 9px 5px 9px;
+.pagination .current {
+  padding: 6px 9px 5px 9px;
   background: $preto;
-  color:#fff;
+  color: #fff;
 }
 
-.error404-label{
+.error404-label {
   font-family: $font-adrip;
   font-size: 200px;
   margin-bottom: -70px;
 }
 
-.page-not-found{
-  .page-content{
+.page-not-found {
+  .page-content {
     font-family: $font-dosis;
     font-size: 30px;
   }
 }
 
-.entry-header{
+.entry-header {
   margin-bottom: 70px;
-  .entry-meta{
+
+  .entry-meta {
     font-family: $font-dosis;
     font-size: 16px;
 
-    i{
+    i {
       font-size: 14px;
     }
   }
 }
 
-.post{
-  .post-thumbnail{
-    img{
+.post {
+  .post-thumbnail {
+    img {
       width: 100%;
     }
   }
 
-  .entry-content{
+  .entry-content {
     font-family: $font-dosis;
     font-size: 22px;
     line-height: 30px;
   }
 
-  .entry-footer{
+  .entry-footer {
     display: none;
   }
 }
 
-.nav-links{
+.nav-links {
+
   .nav-previous,
-  .nav-next{
-    a{
-      background-color: $preto !important;
+  .nav-next {
+    a {
+      background-color: $preto  !important;
       color: $branco;
       font-family: $font-dosis;
 
@@ -657,47 +677,33 @@ div.wpcf7-response-output{
       @include border-radius(30px);
       @extend .trans;
 
-      &:hover{
+      &:hover {
         opacity: 0.7;
 
-        &:after{
+        &:after {
           padding-left: 10px;
         }
 
-        &:before{
+        &:before {
           padding-right: 10px;
         }
       }
 
       &:after,
-      &:before{
+      &:before {
         @extend .trans;
       }
     }
   }
 }
 
-@media (min-width: $screen-sm-min){
-  .grid {
-    figure {
-      width: 100vw;
-    }
-  }
+.page-street-art .grid-item a img,
+#page-aquarela .gallery a img {
+  filter: grayscale(0%) !important;
 }
 
-@media (min-width: $screen-md-min){
-  .grid {
-    figure {
-      width: calc(100vw/3);
-      height: 35vh;
-    }
-  }
-}
+@media (min-width: $screen-sm-min) {}
 
-@media (min-width: $screen-lg-min){
-  .grid {
-    figure {
-      height: 50vh;
-    }
-  }
-}
+@media (min-width: $screen-md-min) {}
+
+@media (min-width: $screen-lg-min) {}

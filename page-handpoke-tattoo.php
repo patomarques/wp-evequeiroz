@@ -8,18 +8,23 @@
             <div class="col-sm-12 text-center">
                 <h1 class="title-tag"><?php echo the_title(); ?></h1>
             </div>
-        </div>
-        <div class="gallery">
-            <div class="grid">
-                <?php while ( $tattos->have_posts() ) : $tattos->the_post(); ?>
+        </div>       
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="gallery">
+                <div class="grid">
+                    <?php while ( $tattos->have_posts() ) : $tattos->the_post(); ?>
 
-                <div class="grid-item">
-                    <a
-                        href="<?php echo the_post_thumbnail_url('full'); ?>"><?php echo the_post_thumbnail('medium_large'); ?></a>
+                    <div class="grid-item">
+                        <a
+                            href="<?php echo the_post_thumbnail_url('full'); ?>">
+                            <?php echo the_post_thumbnail('medium', array('class' => '')); ?>
+                        </a>
+                    </div>
+                    <?php endwhile; ?>
                 </div>
-                <?php endwhile; ?>
             </div>
-            <!--<div class="grid-item grid-item--width2"></div>-->
         </div>
     </div>
 </div>
@@ -41,19 +46,19 @@
     });
 
 
-    jQuery(window).load(function ($) {
-        var elem = document.querySelector('.grid');
-        var iso = new Isotope(elem, {
-            // options
-            itemSelector: '.grid-item',
-            layoutMode: 'fitRows'
-        });
+    // jQuery(window).load(function ($) {
+    //     var elem = document.querySelector('.grid');
+    //     var iso = new Isotope(elem, {
+    //         // options
+    //         itemSelector: '.grid-item',
+    //         layoutMode: 'fitRows'
+    //     });
 
-        // element argument can be a selector string
-        //   for an individual element
-        var iso = new Isotope('.grid', {
-            // options
-        });
-    });
+    //     // element argument can be a selector string
+    //     //   for an individual element
+    //     var iso = new Isotope('.grid', {
+    //         // options
+    //     });
+    // });
 </script>
 <?php get_footer(); ?>

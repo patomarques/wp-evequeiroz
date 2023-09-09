@@ -4,7 +4,8 @@
 @import url("https://fonts.googleapis.com/css?family=Economica:400,700");
 .trans, .title-post, .title-post:after, .input-text,
 .input-textarea, .button-black, .wpcf7-submit, .btn-continue-lendo:after, .menu-full-custom, .scroll-to-bottom, .full-top-bar .list-social-icons li a i, #menu-menu-header li a, .fixed-nav,
-.full-top-bar, .site-nome a, .site-info .devby, .site-info .link-devby, .site-info .link-devby:before, .site-info .link-devby:after, .pagination span, .pagination a, .nav-links .nav-previous a,
+.full-top-bar, .site-nome a, .site-info .devby, .site-info .link-devby, .site-info .link-devby:before, .site-info .link-devby:after, .pagination span,
+.pagination a, .nav-links .nav-previous a,
 .nav-links .nav-next a, .nav-links .nav-previous a:after, .nav-links .nav-previous a:before,
 .nav-links .nav-next a:after,
 .nav-links .nav-next a:before, #home-trampos .list-trampos li {
@@ -63,7 +64,7 @@
   /*font-family: $font-adrip !important;*/
   font-family: "Dosis", sans-serif;
   word-spacing: 4px;
-  font-size: 60px;
+  font-size: 3em;
   letter-spacing: 2px;
 }
 
@@ -520,10 +521,6 @@ textarea.wpcf7-not-valid{
   color: #123123;
 }
 
-.content-main {
-  width: 100vw !important;
-}
-
 .list-social-icons-mobile i {
   font-size: 1.4em;
   opacity: 0.7;
@@ -532,12 +529,6 @@ textarea.wpcf7-not-valid{
 .list-social-icons-mobile li a:hover i {
   color: #dcad54;
   opacity: 1;
-}
-
-.page-street-art .grid-item a img,
-#page-aquarela .gallery a img {
-  -webkit-filter: grayscale(0%) !important;
-          filter: grayscale(0%) !important;
 }
 
 .menu-full-custom {
@@ -1041,6 +1032,12 @@ footer {
   clear: both;
 }
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   overflow-x: hidden !important;
   z-index: 10;
@@ -1061,6 +1058,11 @@ body {
 ::-webkit-scrollbar-thumb {
   background: black;
   border-radius: 10px;
+}
+
+.content-main {
+  width: 100%;
+  margin-top: 50px;
 }
 
 .text-medium {
@@ -1105,7 +1107,7 @@ body {
 }
 
 .grid {
-  width: 100vw;
+  width: 100%;
   position: relative;
   margin: 0 auto;
   padding: 0;
@@ -1585,11 +1587,13 @@ div.wpcf7-response-output {
   font-family: "Dosis", sans-serif;
 }
 
-.pagination .buttons a, .pagination .buttons .current {
+.pagination .buttons a,
+.pagination .buttons .current {
   padding: 12px 18px;
 }
 
-.pagination span, .pagination a {
+.pagination span,
+.pagination a {
   display: block;
   float: left;
   margin: 2px 2px 2px 0;
@@ -1674,23 +1678,10 @@ div.wpcf7-response-output {
   padding-right: 10px;
 }
 
-@media (min-width: 768px) {
-  .grid figure {
-    width: 100vw;
-  }
-}
-
-@media (min-width: 992px) {
-  .grid figure {
-    width: calc(100vw/3);
-    height: 35vh;
-  }
-}
-
-@media (min-width: 1200px) {
-  .grid figure {
-    height: 50vh;
-  }
+.page-street-art .grid-item a img,
+#page-aquarela .gallery a img {
+  -webkit-filter: grayscale(0%) !important;
+          filter: grayscale(0%) !important;
 }
 
 main {
@@ -2105,8 +2096,10 @@ section.home-banner-video p {
   display: none;
 }
 
-/* Extra small devices (phones, less than 768px) */
-/* No media query since this is the default in Bootstrap */
+.grid-item {
+  display: inline-block;
+}
+
 @media (max-width: 768px) {
   .grid-item {
     width: 100%;
@@ -2123,17 +2116,11 @@ section.home-banner-video p {
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .grid-item {
-    width: 33%;
+    width: 20%;
   }
 }
 
 /* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-  .grid-item {
-    width: 25%;
-  }
-}
-
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   #page-graffiti .grid-item {
@@ -2157,19 +2144,7 @@ section.home-banner-video p {
 
 /* Small devices (tablets, 768px and up) */
 /* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-  #page-aquarela .grid-item {
-    width: 33%;
-  }
-}
-
 /* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-  #page-aquarela .grid-item {
-    width: 33%;
-  }
-}
-
 .list-postagens {
   /*margin: 0;
   width: 100%;*/
@@ -2229,13 +2204,6 @@ section.home-banner-video p {
   background-color: #000000;
 }
 
-/*.default-imagem{
-  height: auto;
-  width: 100%;
-  overflow: hidden;
-  display: block;
-  top: 0;
-}*/
 .zoom {
   width: 100%;
   float: left;
