@@ -41,7 +41,6 @@ body {
   border-radius: 10px;
 }
 
-
 .content-main {
   width: 100%;
   margin-top: 50px;
@@ -745,29 +744,26 @@ div.wpcf7-response-output {
 
 .content-lazy-loading {
   text-align: center;
-  padding: 0;
+  padding: 0.2em;
   column-gap: 0.3em;
+  direction: ltr;
 
   &__image {
     width: 100%;
-    cursor: pointer;
-    transition: opacity 400ms;
-    animation: rise 400ms ease-out backwards;
-    animation-play-state: paused;
-    animation-delay: 300ms;
+    cursor: pointer;    
     margin-bottom: 0.3em;
+    filter: grayscale(1);
+
+    @extend .trans;
 
     &:hover {
-      opacity: 0.9;
+      filter: grayscale(0);
     }
   }
 }
 
-@keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(10%);
-  }
+.sl-button {
+  font-size: 10em !important;
 }
 
 @media (min-width: $screen-xs-min) {}
@@ -791,9 +787,11 @@ div.wpcf7-response-output {
 @media (min-width: $screen-lg-min) {
   .content-lazy-loading {
     columns: 5;
-  }
+  }  
+}
 
-  .square {
-    flex-basis: calc(100% / 4);
+@media (min-width: $screen-xl-min) {
+  .content-lazy-loading {
+    columns: 8;
   }
 }

@@ -1,21 +1,8 @@
-window.addEventListener('load', function () {
-    //console.log("It's loaded!");
-    const imgs = document.querySelectorAll(".content-lazy-loading img")
-
-    scrolling()
-    window.onscroll = scrolling
-
-    function scrolling() {
-        const viewportHeight = window.innerHeight
-        imgs.forEach(img => {
-            if (img.getBoundingClientRect().top < viewportHeight) {
-                img.style.animationPlayState = "running"
-            }
-        })
-    }
-})
-
 jQuery(document).ready(function ($) {
+
+    $('.content-lazy-loading__link').on('click', function () {
+
+    });
 
     $('.menu-bars-fullscreen').on('click', function (e) {
         e.preventDefault();
@@ -48,29 +35,6 @@ jQuery(document).ready(function ($) {
             }
         });
     }
-
-    // efeito no scroll vertical do site
-    // if (window.addEventListener) window.addEventListener('DOMMouseScroll', wheel, false);
-    // window.onmousewheel = document.onmousewheel = wheel;
-    //
-    // function wheel(event) {
-    //     var delta = 0;
-    //     if (event.wheelDelta) delta = event.wheelDelta / 120;
-    //     else if (event.detail) delta = -event.detail / 3;
-    //
-    //     handle(delta);
-    //     if (event.preventDefault) event.preventDefault();
-    //     event.returnValue = false;
-    // }
-    //
-    // function handle(delta) {
-    //     var time = 1000;
-    //     var distance = 350;
-    //
-    //     $('html, body').stop().animate({
-    //         scrollTop: $(window).scrollTop() - (distance * delta)
-    //     }, time );
-    // }
 
     // Establish default settings
     var parallaxElements = [];
@@ -135,49 +99,47 @@ jQuery(document).ready(function ($) {
     }
 
 
-    //lightbox
+    //image lightbox
     $(function () {
-        var $gallery = $('.gallery a').simpleLightbox();
+        var $gallery = $('.content-lazy-loading a').simpleLightbox();
 
-        $gallery.on('show.simplelightbox', function () {
-            console.log('Requested for showing');
-        })
+        $gallery.on('show.simplelightbox', function () { })
             .on('shown.simplelightbox', function () {
-                console.log('Shown');
+                // console.log('Shown');
             })
             .on('close.simplelightbox', function () {
-                console.log('Requested for closing');
+                // console.log('Requested for closing');
             })
             .on('closed.simplelightbox', function () {
-                console.log('Closed');
+                // console.log('Closed');
             })
             .on('change.simplelightbox', function () {
-                console.log('Requested for change');
+                // console.log('Requested for change');
             })
             .on('next.simplelightbox', function () {
-                console.log('Requested for next');
+                // console.log('Requested for next');
             })
             .on('prev.simplelightbox', function () {
-                console.log('Requested for prev');
+                // console.log('Requested for prev');
             })
             .on('nextImageLoaded.simplelightbox', function () {
-                console.log('Next image loaded');
+                // console.log('Next image loaded');
             })
             .on('prevImageLoaded.simplelightbox', function () {
-                console.log('Prev image loaded');
+                // console.log('Prev image loaded');
             })
             .on('changed.simplelightbox', function () {
-                console.log('Image changed');
+                // console.log('Image changed');
             })
             .on('nextDone.simplelightbox', function () {
-                console.log('Image changed to next');
+                // console.log('Image changed to next');
             })
             .on('prevDone.simplelightbox', function () {
-                console.log('Image changed to prev');
+                // console.log('Image changed to prev');
             })
             .on('error.simplelightbox', function (e) {
-                console.log('No image found, go to the next/prev');
-                console.log(e);
+                // console.log('No image found, go to the next/prev');
+                // console.log(e);
             });
     });
 
@@ -193,7 +155,11 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    $('#btn-submit').on('click', function () {
-        $(this).submit();
-    });
+    // window.onscroll = menuFixed;
+
+    // function menuFixed() {
+    //     console.log('menu fixed check');
+    //     //document.querySelector('.site-header').toggleClass('.site-header--fixed');
+    // }
+
 });

@@ -1,8 +1,15 @@
 .site-header {
   -webkit-box-shadow: 0 4px 6px -6px #222;
   -moz-box-shadow: 0 4px 6px -6px #222;
-  box-shadow: 0 4px 6px -6px #222; 
+  box-shadow: 0 4px 6px -6px #222;
   background-color: $branco;
+
+}
+
+.site-header--fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 .navigation-top {
@@ -38,7 +45,6 @@
     opacity: 0.7;
   }
 }
-
 
 .full-top-bar {
   background-color: $preto-bufento;
@@ -252,7 +258,7 @@
   .menu-bars-fullscreen {
     top: -104px;
   }
-} 
+}
 
 @media (min-width: $screen-sm-min) {
   .menu-desktop {
@@ -277,11 +283,11 @@
   }
 
   #menu-menu-header li .dropdown-menu {
-    background-color: $branco !important;
+    background-color: $branco  !important;
   }
 
   #menu-menu-header li .dropdown-menu li a {
-    background-color: $branco !important;
+    background-color: $branco  !important;
   }
 
   #masthead {
@@ -356,11 +362,11 @@
 
     li {
       a {
-        color: $preto !important;
+        color: $preto  !important;
         font-size: 1.2em;
 
-        &:hover{
-          color: $dourado !important;
+        &:hover {
+          color: $dourado  !important;
         }
       }
 
@@ -395,7 +401,7 @@
   .nav-link {
     font-size: 1.2em;
 
-    &:hover{
+    &:hover {
       color: $dourado;
     }
   }
