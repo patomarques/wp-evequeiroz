@@ -1,19 +1,33 @@
-jQuery(document).ready(function( $ ) {
+window.addEventListener('load', function () {
+    //console.log("It's loaded!");
+    const imgs = document.querySelectorAll(".content-lazy-loading img")
 
-<<<<<<< HEAD
-    $('.menu-bars-fullscreen').on('click', function(e){
+    scrolling()
+    window.onscroll = scrolling
+
+    function scrolling() {
+        const viewportHeight = window.innerHeight
+        imgs.forEach(img => {
+            if (img.getBoundingClientRect().top < viewportHeight) {
+                img.style.animationPlayState = "running"
+            }
+        })
+    }
+})
+
+jQuery(document).ready(function ($) {
+
+    $('.menu-bars-fullscreen').on('click', function (e) {
         e.preventDefault();
         console.log('menu click');
 
         $('.menu-bars-fullscreen').toggleClass("clicked");
-        $(".menu-full-custom").toggleClass("open");  
+        $(".menu-full-custom").toggleClass("open");
 
         return;
     });
 
-=======
->>>>>>> d8ff7dc (evequeiroz wp-theme)
-    if($('.home-banner-video').length > 0) {
+    if ($('.home-banner-video').length > 0) {
         var alturaContent = $('.home-banner-video').height();
 
 
@@ -27,10 +41,10 @@ jQuery(document).ready(function( $ ) {
         $(window).bind('scroll', function () {
             if ($(window).scrollTop() > alturaContent) {
                 //$('.site-header').addClass('fixed-nav');
-                $('.site-header').stop(true,false).addClass('fixed-nav', { duration : 200000});
+                $('.site-header').stop(true, false).addClass('fixed-nav', { duration: 200000 });
 
             } else {
-                $('.site-header').stop(true,false).removeClass('fixed-nav', { duration : 200000});
+                $('.site-header').stop(true, false).removeClass('fixed-nav', { duration: 200000 });
             }
         });
     }
@@ -71,7 +85,7 @@ jQuery(document).ready(function( $ ) {
 
     window.requestAnimationFrame = requestAnimationFrame;
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         windowHeight = $(window).height();
 
         //touch event check
@@ -80,25 +94,25 @@ jQuery(document).ready(function( $ ) {
             (window.DocumentTouch && document instanceof DocumentTouch);
 
         if (touchSupported) {
-            $(window).bind("touchmove", function(e) {
+            $(window).bind("touchmove", function (e) {
                 var scroll = e.currentTarget.scrollY;
                 Parallax(scroll);
             });
         } else {
-            $(window).bind("scroll", function(e) {
+            $(window).bind("scroll", function (e) {
                 var scroll = $(this).scrollTop();
                 Parallax(scroll);
             });
         }
 
-        $(window).resize(function() {
+        $(window).resize(function () {
             windowHeight = $(window).height();
         });
     });
 
     function Parallax(scrollTop) {
         // for each of content parallax element
-        $('[data-type="parallax"]').each(function() {
+        $('[data-type="parallax"]').each(function () {
             // Save a reference to the element
             var $this = $(this);
             var speed = $this.data("speed") || 0;
@@ -113,7 +127,7 @@ jQuery(document).ready(function( $ ) {
             var yPos = Math.round((scrollTop - offset) / speed);
 
             // Apply the Y Position to Set the Parallax Effect
-            window.requestAnimationFrame(function() {
+            window.requestAnimationFrame(function () {
                 $this.css("transform", "translate3d(0, " + yPos + "px, 0)");
                 $this.css("-webkit-transform", "translate3d(0, " + yPos + "px, 0)");
             });
@@ -122,64 +136,64 @@ jQuery(document).ready(function( $ ) {
 
 
     //lightbox
-    $(function(){
+    $(function () {
         var $gallery = $('.gallery a').simpleLightbox();
 
-        $gallery.on('show.simplelightbox', function(){
+        $gallery.on('show.simplelightbox', function () {
             console.log('Requested for showing');
         })
-            .on('shown.simplelightbox', function(){
+            .on('shown.simplelightbox', function () {
                 console.log('Shown');
             })
-            .on('close.simplelightbox', function(){
+            .on('close.simplelightbox', function () {
                 console.log('Requested for closing');
             })
-            .on('closed.simplelightbox', function(){
+            .on('closed.simplelightbox', function () {
                 console.log('Closed');
             })
-            .on('change.simplelightbox', function(){
+            .on('change.simplelightbox', function () {
                 console.log('Requested for change');
             })
-            .on('next.simplelightbox', function(){
+            .on('next.simplelightbox', function () {
                 console.log('Requested for next');
             })
-            .on('prev.simplelightbox', function(){
+            .on('prev.simplelightbox', function () {
                 console.log('Requested for prev');
             })
-            .on('nextImageLoaded.simplelightbox', function(){
+            .on('nextImageLoaded.simplelightbox', function () {
                 console.log('Next image loaded');
             })
-            .on('prevImageLoaded.simplelightbox', function(){
+            .on('prevImageLoaded.simplelightbox', function () {
                 console.log('Prev image loaded');
             })
-            .on('changed.simplelightbox', function(){
+            .on('changed.simplelightbox', function () {
                 console.log('Image changed');
             })
-            .on('nextDone.simplelightbox', function(){
+            .on('nextDone.simplelightbox', function () {
                 console.log('Image changed to next');
             })
-            .on('prevDone.simplelightbox', function(){
+            .on('prevDone.simplelightbox', function () {
                 console.log('Image changed to prev');
             })
-            .on('error.simplelightbox', function(e){
+            .on('error.simplelightbox', function (e) {
                 console.log('No image found, go to the next/prev');
                 console.log(e);
             });
     });
 
-    $('ul.dropdown-menu').bind('mouseleave', function(){
+    $('ul.dropdown-menu').bind('mouseleave', function () {
         var dropdown = $(this);
         var liParent = dropdown.parent();
 
-        var li       = liParent[0].id;
-        if($('#' + li).hasClass('show')){
+        var li = liParent[0].id;
+        if ($('#' + li).hasClass('show')) {
             liParent.removeClass('show');
             console.log(liParent);
             $('li.nav-item').removeClass('show');
         }
     });
 
-    $('#btn-submit').on('click', function(){
+    $('#btn-submit').on('click', function () {
         $(this).submit();
     });
 });

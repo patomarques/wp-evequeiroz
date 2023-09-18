@@ -47,6 +47,12 @@ body {
   margin-top: 50px;
 }
 
+.container-full {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
 .text-medium {
   font-size: 1.5em;
 }
@@ -702,8 +708,92 @@ div.wpcf7-response-output {
   filter: grayscale(0%) !important;
 }
 
-@media (min-width: $screen-sm-min) {}
+.square-container {
+  display: flex;
+  flex-wrap: wrap;
+}
 
-@media (min-width: $screen-md-min) {}
+.square {
+  position: relative;
+  margin: 0;
+  background-color: $preto;
+  box-sizing: border-box;
+  flex-basis: 50%;
 
-@media (min-width: $screen-lg-min) {}
+  @extend .trans;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    .wp-post-image {}
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+}
+
+.content-lazy-loading {
+  text-align: center;
+  padding: 0;
+  column-gap: 0.3em;
+
+  &__image {
+    width: 100%;
+    cursor: pointer;
+    transition: opacity 400ms;
+    animation: rise 400ms ease-out backwards;
+    animation-play-state: paused;
+    animation-delay: 300ms;
+    margin-bottom: 0.3em;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+}
+
+@media (min-width: $screen-xs-min) {}
+
+@media (min-width: $screen-sm-min) {
+  .content-lazy-loading {
+    columns: 2;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .content-lazy-loading {
+    columns: 3;
+  }
+
+  .square {
+    flex-basis: calc(100% / 3);
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .content-lazy-loading {
+    columns: 5;
+  }
+
+  .square {
+    flex-basis: calc(100% / 4);
+  }
+}
