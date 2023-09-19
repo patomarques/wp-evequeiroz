@@ -1,12 +1,7 @@
 jQuery(document).ready(function ($) {
 
-    $('.content-lazy-loading__link').on('click', function () {
-
-    });
-
     $('.menu-bars-fullscreen').on('click', function (e) {
         e.preventDefault();
-        console.log('menu click');
 
         $('.menu-bars-fullscreen').toggleClass("clicked");
         $(".menu-full-custom").toggleClass("open");
@@ -14,90 +9,15 @@ jQuery(document).ready(function ($) {
         return;
     });
 
-    if ($('.home-banner-video').length > 0) {
-        var alturaContent = $('.home-banner-video').height();
-
-
-        if ($('#masthead').length > 0) {
-            var alturaMenu = $('#masthead').outerHeight();
-
-            alturaContent = alturaContent - alturaMenu;
-        }
-
-        // fix on top
-        $(window).bind('scroll', function () {
-            if ($(window).scrollTop() > alturaContent) {
-                //$('.site-header').addClass('fixed-nav');
-                $('.site-header').stop(true, false).addClass('fixed-nav', { duration: 200000 });
-
-            } else {
-                $('.site-header').stop(true, false).removeClass('fixed-nav', { duration: 200000 });
-            }
-        });
-    }
-
-    // Establish default settings
-    var parallaxElements = [];
-    var windowHeight = 0;
-    var speed = 4;
-
-    var requestAnimationFrame =
-        window.requestAnimationFrame ||
-        window.mozRequestAnimationFrame ||
-        window.webkitRequestAnimationFrame ||
-        window.msRequestAnimationFrame;
-
-    window.requestAnimationFrame = requestAnimationFrame;
-
-    $(document).ready(function () {
-        windowHeight = $(window).height();
-
-        //touch event check
-        var touchSupported =
-            "ontouchstart" in window ||
-            (window.DocumentTouch && document instanceof DocumentTouch);
-
-        if (touchSupported) {
-            $(window).bind("touchmove", function (e) {
-                var scroll = e.currentTarget.scrollY;
-                Parallax(scroll);
-            });
+    // fix on top
+    $(window).bind('scroll', function () {
+        let alturaContent = $('.site-header').outerHeight();
+        if ($(window).scrollTop() > alturaContent) {
+            $('.site-header').stop(true, false).addClass('fixed-nav', { duration: 200000 });
         } else {
-            $(window).bind("scroll", function (e) {
-                var scroll = $(this).scrollTop();
-                Parallax(scroll);
-            });
+            $('.site-header').stop(true, false).removeClass('fixed-nav', { duration: 200000 });
         }
-
-        $(window).resize(function () {
-            windowHeight = $(window).height();
-        });
     });
-
-    function Parallax(scrollTop) {
-        // for each of content parallax element
-        $('[data-type="parallax"]').each(function () {
-            // Save a reference to the element
-            var $this = $(this);
-            var speed = $this.data("speed") || 0;
-            var offset = $this.offset().top;
-            var height = $this.outerHeight(true);
-
-            // Check if above or below viewport
-            if (offset + height <= scrollTop || offset >= scrollTop + windowHeight) {
-                return;
-            }
-
-            var yPos = Math.round((scrollTop - offset) / speed);
-
-            // Apply the Y Position to Set the Parallax Effect
-            window.requestAnimationFrame(function () {
-                $this.css("transform", "translate3d(0, " + yPos + "px, 0)");
-                $this.css("-webkit-transform", "translate3d(0, " + yPos + "px, 0)");
-            });
-        });
-    }
-
 
     //image lightbox
     $(function () {
@@ -154,12 +74,4 @@ jQuery(document).ready(function ($) {
             $('li.nav-item').removeClass('show');
         }
     });
-
-    // window.onscroll = menuFixed;
-
-    // function menuFixed() {
-    //     console.log('menu fixed check');
-    //     //document.querySelector('.site-header').toggleClass('.site-header--fixed');
-    // }
-
 });
