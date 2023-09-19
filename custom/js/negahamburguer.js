@@ -1,9 +1,7 @@
 jQuery(document).ready(function( $ ) {
 
-<<<<<<< HEAD
     $('.menu-bars-fullscreen').on('click', function(e){
         e.preventDefault();
-        console.log('menu click');
 
         $('.menu-bars-fullscreen').toggleClass("clicked");
         $(".menu-full-custom").toggleClass("open");  
@@ -11,8 +9,6 @@ jQuery(document).ready(function( $ ) {
         return;
     });
 
-=======
->>>>>>> d8ff7dc (evequeiroz wp-theme)
     if($('.home-banner-video').length > 0) {
         var alturaContent = $('.home-banner-video').height();
 
