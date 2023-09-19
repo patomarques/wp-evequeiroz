@@ -750,7 +750,7 @@ div.wpcf7-response-output {
 
   &__image {
     width: 100%;
-    cursor: pointer;    
+    cursor: pointer;
     margin-bottom: 0.3em;
     filter: grayscale(1);
 
@@ -762,8 +762,29 @@ div.wpcf7-response-output {
   }
 }
 
-.sl-button {
-  font-size: 10em !important;
+.sl-wrapper {
+  .sl-navigation {
+
+    button.sl-prev,
+    button.sl-next {
+      font-size: 10em !important;
+      opacity: .6;
+
+      @extend .trans;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.sl-overlay {
+  opacity: 1;
+}
+
+.sl-counter {
+  display: none !important;
 }
 
 @media (min-width: $screen-xs-min) {
@@ -774,19 +795,27 @@ div.wpcf7-response-output {
     }
   }
 
-}
-
-@media (min-width: $screen-sm-min) {
- 
-
   .content-lazy-loading {
     columns: 2;
   }
 }
 
-@media (min-width: $screen-md-min) {
+@media (min-width: $screen-sm-min) {
   .content-lazy-loading {
     columns: 3;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .content-lazy-loading {
+    columns: 4;
+  }
+
+  .grid {
+    figure {
+      width: calc(100%/3);
+      height: 40vh;
+    }
   }
 
   .square {
@@ -797,17 +826,22 @@ div.wpcf7-response-output {
 @media (min-width: $screen-lg-min) {
   .grid {
     figure {
-      width: calc(100%/3);
       height: 50vh;
     }
   }
 
   .content-lazy-loading {
     columns: 5;
-  }  
+  }
 }
 
 @media (min-width: $screen-xl-min) {
+  .grid {
+    figure {
+      height: 60vh;
+    }
+  }
+
   .content-lazy-loading {
     columns: 8;
   }

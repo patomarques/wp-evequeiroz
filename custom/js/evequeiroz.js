@@ -12,7 +12,9 @@ jQuery(document).ready(function ($) {
     // fix on top
     $(window).bind('scroll', function () {
         let alturaContent = $('.site-header').outerHeight();
-        if ($(window).scrollTop() > alturaContent) {
+        let bodyHeight = $('#page').outerHeight();
+        
+        if ($(window).scrollTop() > alturaContent && bodyHeight > 1000) {
             $('.site-header').stop(true, false).addClass('fixed-nav', { duration: 200000 });
         } else {
             $('.site-header').stop(true, false).removeClass('fixed-nav', { duration: 200000 });
