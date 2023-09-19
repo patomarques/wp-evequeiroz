@@ -209,10 +209,6 @@
 }
 
 @media (max-width: $screen-xs-max) {
-  .menu-bars-fullscreen {
-    top: -92px;
-  }
-
   #home-quem-sou {
     margin-top: 0 !important;
   }
@@ -255,9 +251,7 @@
 }
 
 @media (min-width: $screen-xs-min) {
-  .menu-bars-fullscreen {
-    top: -104px;
-  }
+  
 }
 
 @media (min-width: $screen-sm-min) {

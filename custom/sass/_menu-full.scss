@@ -49,7 +49,6 @@
 
   .hamburger {
     position: absolute;
-    top: 30px;
     left: 50px;
     width: 30px;
     height: 1px;
@@ -208,3 +207,32 @@
     z-index: 999;
   }
 }
+
+@media (min-width: $screen-xs-min) {
+  .menu-bars-fullscreen {
+    .menu {
+      top: -32px;
+    }
+
+    &.clicked {
+      .menu {
+        top: 42px;
+        position: fixed;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-xs-max) {
+  .menu-bars-fullscreen {
+    .menu {
+      top: 32px;
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {}
+
+@media (min-width: $screen-md-min) {}
+
+@media (min-width: $screen-lg-min) {}

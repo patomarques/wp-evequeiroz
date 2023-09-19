@@ -766,9 +766,19 @@ div.wpcf7-response-output {
   font-size: 10em !important;
 }
 
-@media (min-width: $screen-xs-min) {}
+@media (min-width: $screen-xs-min) {
+  .grid {
+    figure {
+      width: calc(100%/3);
+      height: 25vh;
+    }
+  }
+
+}
 
 @media (min-width: $screen-sm-min) {
+ 
+
   .content-lazy-loading {
     columns: 2;
   }
@@ -785,6 +795,13 @@ div.wpcf7-response-output {
 }
 
 @media (min-width: $screen-lg-min) {
+  .grid {
+    figure {
+      width: calc(100%/3);
+      height: 50vh;
+    }
+  }
+
   .content-lazy-loading {
     columns: 5;
   }  
