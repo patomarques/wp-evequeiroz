@@ -24,7 +24,8 @@ jQuery(document).ready(function ($) {
     //image lightbox
     $(function () {
         var $gallery = $('.content-lazy-loading a').simpleLightbox();
-
+        var $gallery = $('.grid .grid-item a').simpleLightbox();
+        
         $gallery.on('show.simplelightbox', function () { })
             .on('shown.simplelightbox', function () {
                 // console.log('Shown');

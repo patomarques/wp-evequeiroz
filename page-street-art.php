@@ -11,14 +11,18 @@
             <?php while ( $graffiti->have_posts() ) : $graffiti->the_post(); ?>
 
                 <div class="grid-item">
-                    <a href="<?php echo the_post_thumbnail_url(); ?>"><?php echo the_post_thumbnail(); ?></a>
+                    <a href="<?php echo the_post_thumbnail_url('large'); ?>">
+                        <?php echo the_post_thumbnail('medium'); ?>
+                    </a>
                 </div>
             <?php endwhile; ?>
             
             <?php while ( $lambes->have_posts() ) : $lambes->the_post(); ?>
 
                 <div class="grid-item">
-                    <a href="<?php echo the_post_thumbnail_url(); ?>"><?php echo the_post_thumbnail(); ?></a>
+                    <a href="<?php echo the_post_thumbnail_url('large'); ?>">
+                        <?php echo the_post_thumbnail('medium'); ?>
+                    </a>
                 </div>
             <?php endwhile; ?>
         </div>
