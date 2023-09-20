@@ -384,10 +384,7 @@ function wp_add_import_scripts()
     // Register the script like this for a theme:
     wp_register_script( 'modernizr-script', get_template_directory_uri() . '/custom/js/modernizr.js', array( 'jquery' ) );
     wp_enqueue_script( 'modernizr-script' );
-
-  /*  wp_register_script( 'nh-script', get_template_directory_uri() . '/custom/js/negahamburguer.js', array( 'jquery' ) );
-    wp_enqueue_script( 'nh-script' );*/
-
+  
     wp_register_script( 'parallaxie-script', get_template_directory_uri() . '/bower_components/parallaxie/parallaxie.js', array( 'jquery' ) );
     wp_enqueue_script( 'parallaxie-script' );
 
@@ -396,6 +393,12 @@ function wp_add_import_scripts()
 
     wp_register_script( 'scrollbar-js', get_template_directory_uri() . '/custom/js/Scrollbar.js' );
     wp_enqueue_script( 'scrollbar-js' );
+
+    wp_register_script( 'theme-script', get_template_directory_uri() . '/custom/js/evequeiroz.js', array( 'jquery' ) );
+    wp_enqueue_script( 'theme-script' );
+
+    wp_register_script( 'theme-script', get_template_directory_uri() . '/custom/js/lazy-loading.js', array( 'jquery' ) );
+    wp_enqueue_script( 'theme-script' );
 
     // For either a plugin or a theme, you can then enqueue the script:
     //wp_enqueue_script( 'custom-script' );

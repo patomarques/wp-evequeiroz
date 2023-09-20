@@ -1,12 +1,9 @@
 <!--
 Template Name: Sobre Mim
-
 -->
 
 <?php get_header(); ?>
-</div> <!-- end .row -->
-</div> <!-- end .container  -->
-<div class="site-content site-individual" id="page-sobre">
+<div class="site-content site-individual content-main" id="page-sobre">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 text-center">
@@ -40,7 +37,7 @@ Template Name: Sobre Mim
 <script>
 
     jQuery(document).ready(function( $ ) {
-        $('.js-tilt').tilt({
+        $('.wp-block-image img').tilt({
             axis: 'x',
             speed: 1000,
             transition: true

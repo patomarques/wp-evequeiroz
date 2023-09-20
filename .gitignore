@@ -1,7 +1,19 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 bower_components
 node_modules
 =======
 node_modules/
 bower_components
 >>>>>>> main
+=======
+<<<<<<< HEAD
+node_modules/
+=======
+>>>>>>> d8ff7dc (evequeiroz wp-theme)
+bower_components
+=======
+bower_components
+node_modules
+>>>>>>> 1d8f227 (node-sass)
+>>>>>>> feature/images-lazy-loading

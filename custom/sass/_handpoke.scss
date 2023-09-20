@@ -1,23 +1,22 @@
-
-/* line 8, ../sass/demo.scss */
 * {
   box-sizing: border-box;
 }
 
-/* line 16, ../sass/demo.scss */
 .clear {
   clear: both;
   float: none;
   width: 100%;
 }
-.gallery{
+
+.gallery {
   width: 100%;
   height: auto;
 
-  a{
+  a {
     display: block;
     height: auto;
-    img{
+
+    img {
       width: auto;
       height: auto;
       filter: grayscale(100%);
@@ -25,52 +24,44 @@
       @include transition(.50s);
       position: relative;
 
-      &:hover{
+      &:hover {
         filter: grayscale(0%);
       }
     }
   }
 }
 
-<<<<<<< HEAD
-/* line 46, ../sass/demo.scss */
-.container .gallery a:hover img {
-  /*-webkit-transform: scale(1.05);
-  -moz-transform: scale(1.05);
-  -o-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  transform: scale(1.05);
-  z-index: 5;*/
-}
-/* line 57, ../sass/demo.scss */
-.container .gallery a.big img {
-
-}
-
-=======
->>>>>>> main
-.sl-counter{
+.sl-counter {
   display: none;
 }
 
-/* Extra small devices (phones, less than 768px) */
-/* No media query since this is the default in Bootstrap */
+.grid-item {
+  display: inline-block;
+}
 
 @media (max-width: $screen-sm-min) {
-  .grid-item { width: 100%; }
+  .grid-item {
+    width: 100%;
+  }
 }
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min) {
-  .grid-item { width: 50%; }
+  .grid-item {
+    width: 50%;
+  }
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: $screen-md-min) {
-  .grid-item { width: 33%; }
+  .grid-item {
+    width: 20%;
+  }
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: $screen-lg-min) {
-  .grid-item { width: 25%; }
+  .grid-item {
+    width: calc(100%/6);
+  }
 }

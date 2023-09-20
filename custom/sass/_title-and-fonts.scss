@@ -54,7 +54,7 @@ $title-midia: $font-badscript;
   /*font-family: $font-adrip !important;*/
   font-family: $font-title;
   word-spacing: 4px;
-  font-size: 60px;
+  font-size: 3em;
   letter-spacing: 2px;
 
   &:after{
@@ -106,17 +106,13 @@ $title-midia: $font-badscript;
 .title-blog-post{
   font-size: 2.2rem;
   font-family: $font-dosis;
-<<<<<<< HEAD
-  text-align: center;
-=======
   text-align: center; 
->>>>>>> main
 
   &:after{
     content: '';
     display: block;
     width: 100px;
-    height: 2px;
+    height: 2px; 
     background-color: $preto;
     margin: 25px auto -5px;
   }

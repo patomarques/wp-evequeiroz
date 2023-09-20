@@ -1,3 +1,10 @@
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+}
+
 @mixin zoom($scale){
   -moz-transform: scale($scale);
   -webkit-transform: scale($scale);
