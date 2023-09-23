@@ -21,6 +21,7 @@ body {
   overflow-x: hidden !important;
   z-index: 10;
   position: relative;
+  font-family: $font-default;
 }
 
 ::-webkit-scrollbar {
@@ -43,7 +44,8 @@ body {
 
 .content-main {
   width: 100%;
-  margin-top: 50px;
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 .container-full {
@@ -787,6 +789,132 @@ div.wpcf7-response-output {
   display: none !important;
 }
 
+.content-posts {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+
+  .content-post {
+    &__image {
+      background: $preto;
+      position: relative;
+      margin-bottom: 10px;
+
+      &:after {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+      }
+    }
+
+    &__box {
+      padding: 15px;
+    }
+
+    &__title {      
+      min-height: 50px;
+      
+      a {
+        color: $preto;
+        text-decoration: none;        
+        font-size: 1.1em;
+
+        &:hover {
+          opacity: .9;
+          color: $roxo;
+        }
+      }
+    }
+
+    &__date {
+      font-size: 1em;
+    }
+
+    &__categories {
+      position: relative;
+      top: 0;
+    }
+
+    &__text {
+      min-height: 4.5em;
+      font-size: 1.2em;
+    }
+  }
+}
+
+.tags {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: .5em;
+  right: .5em;
+  bottom: 0;
+  list-style: none;
+}
+
+.tags li,
+.tags a {
+  float: left;
+  height: 26px;
+  line-height: 24px;
+  position: relative;
+  font-size: 14px;
+}
+
+.tags a {
+  margin-left: 1em;
+  padding: 0 8px 0 10px;
+  background: $roxo-roxo;
+  color: $branco;
+  text-decoration: none;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+
+  @extend .trans;
+
+  &:before {
+    content: "";
+    float: left;
+    position: absolute;
+    top: 0;
+    left: -12px;
+    width: 0;
+    height: 0;
+    border-color: transparent $roxo-roxo transparent transparent;
+    border-style: solid;
+    border-width: 12px 12px 14px 0;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    float: left;
+    width: 4px;
+    height: 4px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    background: #fff;
+    -moz-box-shadow: -1px -1px 2px #004977;
+    -webkit-box-shadow: -1px -1px 2px #004977;
+    box-shadow: -1px -1px 2px #004977;
+  }
+
+  &:hover {
+    background: #555;
+
+    &:before {
+      border-color: transparent #555 transparent transparent;
+    }
+  }
+}
+
 @media (min-width: $screen-xs-min) {
   .grid {
     figure {
@@ -798,6 +926,10 @@ div.wpcf7-response-output {
   .content-lazy-loading {
     columns: 2;
   }
+
+  .content-posts {
+    columns: 1;
+  }
 }
 
 @media (min-width: $screen-sm-min) {
@@ -807,6 +939,10 @@ div.wpcf7-response-output {
 }
 
 @media (min-width: $screen-md-min) {
+  .content-posts {
+    columns: 3;
+  }
+
   .content-lazy-loading {
     columns: 4;
   }

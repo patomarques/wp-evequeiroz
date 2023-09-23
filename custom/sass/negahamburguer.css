@@ -24,7 +24,7 @@
 .nav-links .nav-next a, .nav-links .nav-previous a:after, .nav-links .nav-previous a:before,
 .nav-links .nav-next a:after,
 .nav-links .nav-next a:before, .square, .content-lazy-loading__image, .sl-wrapper .sl-navigation button.sl-prev,
-.sl-wrapper .sl-navigation button.sl-next, #home-trampos .list-trampos li {
+.sl-wrapper .sl-navigation button.sl-next, .tags a, #home-trampos .list-trampos li {
   -webkit-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
 }
@@ -140,6 +140,13 @@
   height: 2px;
   background-color: #000000;
   margin: 25px auto -5px;
+}
+
+.title-subtitle {
+  font-size: 1.3em;
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-family: "Dosis", sans-serif;
 }
 
 .input-text,
@@ -398,6 +405,36 @@ textarea.wpcf7-not-valid{
 
 .button-effect:active, .wpcf7-submit:active, .button-black:active {
   color: #000000;
+}
+
+.button-link {
+  text-decoration: none !important;
+  color: #000000;
+  font-weight: 700;
+  position: relative;
+  font-style: 1.2em;
+}
+
+.button-link:before {
+  content: '';
+  background-color: #761fda;
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 100%;
+  height: 3px;
+  z-index: -1;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.button-link:hover {
+  color: #FFFFFF;
+}
+
+.button-link:hover:before {
+  bottom: 0;
+  height: 100%;
 }
 
 .menu-bars-fullscreen {
@@ -1070,6 +1107,7 @@ body {
   overflow-x: hidden !important;
   z-index: 10;
   position: relative;
+  font-family: "Dosis", serif;
 }
 
 ::-webkit-scrollbar {
@@ -1090,7 +1128,8 @@ body {
 
 .content-main {
   width: 100%;
-  margin-top: 50px;
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 .container-full {
@@ -1794,6 +1833,121 @@ div.wpcf7-response-output {
   display: none !important;
 }
 
+.content-posts {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.content-posts .content-post__image {
+  background: #000000;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.content-posts .content-post__image:after {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+
+.content-posts .content-post__box {
+  padding: 15px;
+}
+
+.content-posts .content-post__title {
+  min-height: 50px;
+}
+
+.content-posts .content-post__title a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+.content-posts .content-post__title a:hover {
+  opacity: .9;
+  color: #5b2461;
+}
+
+.content-posts .content-post__date {
+  font-size: 1em;
+}
+
+.content-posts .content-post__categories {
+  position: relative;
+  top: 0;
+}
+
+.content-posts .content-post__text {
+  min-height: 4.5em;
+  font-size: 1.2em;
+}
+
+.tags {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: .5em;
+  right: .5em;
+  bottom: 0;
+  list-style: none;
+}
+
+.tags li,
+.tags a {
+  float: left;
+  height: 26px;
+  line-height: 24px;
+  position: relative;
+  font-size: 14px;
+}
+
+.tags a {
+  margin-left: 1em;
+  padding: 0 8px 0 10px;
+  background: #761fda;
+  color: #FFFFFF;
+  text-decoration: none;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.tags a:before {
+  content: "";
+  float: left;
+  position: absolute;
+  top: 0;
+  left: -12px;
+  width: 0;
+  height: 0;
+  border-color: transparent #761fda transparent transparent;
+  border-style: solid;
+  border-width: 12px 12px 14px 0;
+}
+
+.tags a:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  float: left;
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  background: #fff;
+  -webkit-box-shadow: -1px -1px 2px #004977;
+  box-shadow: -1px -1px 2px #004977;
+}
+
+.tags a:hover {
+  background: #555;
+}
+
+.tags a:hover:before {
+  border-color: transparent #555 transparent transparent;
+}
+
 @media (min-width: 320px) {
   .grid figure {
     width: calc(100%/3);
@@ -1802,6 +1956,10 @@ div.wpcf7-response-output {
   .content-lazy-loading {
     -webkit-columns: 2;
             columns: 2;
+  }
+  .content-posts {
+    -webkit-columns: 1;
+            columns: 1;
   }
 }
 
@@ -1813,6 +1971,10 @@ div.wpcf7-response-output {
 }
 
 @media (min-width: 992px) {
+  .content-posts {
+    -webkit-columns: 3;
+            columns: 3;
+  }
   .content-lazy-loading {
     -webkit-columns: 4;
             columns: 4;

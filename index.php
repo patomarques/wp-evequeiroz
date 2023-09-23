@@ -17,20 +17,19 @@ get_header(); ?>
     <section id="home-quem-sou" class="content-section">
         <div class="container">
             <?php
+                $about_me   = "";
+                $photo_me   = "";
+            
+                $homeQuery = new WP_Query( 'pagename=home' );
+                
+                while ( $homeQuery->have_posts() ) : $homeQuery->the_post();
+                    $about_me   = get_the_content();
+                    $photo_me   = get_the_post_thumbnail();
+                endwhile;
 
-            $about_me   = "";
-            $photo_me   = "";
-
-            // query for the about page
-            $homeQuery = new WP_Query( 'pagename=home' );
-            // "loop" through query (even though it's just one page)
-            while ( $homeQuery->have_posts() ) : $homeQuery->the_post();
-                $about_me   = get_the_content();
-                $photo_me   = get_the_post_thumbnail();
-            endwhile;
-
-            wp_reset_postdata();
+                wp_reset_postdata();
             ?>
+
             <div class="row">
                 <div class="col-sm-12 col-md-5 col-lg-4 text-center hidden">
                     <div class="js-tilt" data-tilt>
@@ -47,7 +46,8 @@ get_header(); ?>
         </div>
     </section>
 
-</div></div>
+</div>
+
 <section id="home-trampos" class="content-full clearfix">
     <?php
         $thumb_1    = "";
@@ -106,19 +106,10 @@ get_header(); ?>
         </a>
     </div>
 </section>
+
+<?php get_template_part( 'template-parts/content-blog' )?>
+
 </div>
 
-    <script src="<?php echo get_template_directory_uri(); ?>/custom/libs/tilt.js/src/tilt.jquery.js"></script>
-    <script>
-
-        jQuery(document).ready(function( $ ) {
-            $('.js-tilt').tilt({
-                axis: 'x',
-                speed: 1500,
-                transition: true
-            });
-        });
-
-    </script>
 <?php
 get_footer();

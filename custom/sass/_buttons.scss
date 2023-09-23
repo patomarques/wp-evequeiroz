@@ -1,6 +1,6 @@
-.button-black{
-  color: $preto !important;
-  border: 2px solid $preto !important;
+.button-black {
+  color: $preto  !important;
+  border: 2px solid $preto  !important;
   background-color: $branco;
   font-size: 12px !important;
   font-family: $font-default;
@@ -10,14 +10,14 @@
   @include border-radius(0);
   @extend .button-effect;
   @extend .btn-5;
-  
-  &:hover{
+
+  &:hover {
     background-color: $preto;
-    color: $branco !important;
+    color: $branco  !important;
   }
 }
 
-.button-effect{
+.button-effect {
   background: none;
   display: block;
   font-weight: bold;
@@ -27,19 +27,19 @@
   text-transform: uppercase;
 
   &:before,
-  &:after{
+  &:after {
     content: '';
     position: absolute;
     z-index: -1;
   }
 
-  &:hover{
+  &:hover {
     color: #2ecc71;
   }
 }
 
 .button-effect,
-.button-effect:after{
+.button-effect:after {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -80,15 +80,15 @@
   width: 135%;
 }
 
-.btn-continue-lendo{
-  color: $preto !important;
-  font-family: $font-poret !important;
+.btn-continue-lendo {
+  color: $preto  !important;
+  font-family: $font-poret  !important;
   position: relative;
   text-align: center;
   display: block;
   text-decoration: none !important;
 
-  &:after{
+  &:after {
     content: '';
     display: block;
     margin: 0 auto;
@@ -100,14 +100,13 @@
     background-color: $preto;
   }
 
-  &:hover{
-    &:after{
+  &:hover {
+    &:after {
 
       width: 100px;
     }
   }
 }
-
 
 .button-effect {
   flex: 1 1 auto;
@@ -126,7 +125,7 @@
   color: $preto;
   text-decoration: none !important;
   word-spacing: 5px;
-  
+
   &:after {
     position: absolute;
     transition: .3s;
@@ -135,7 +134,7 @@
     left: 50%;
     bottom: 0;
     /*height: 3px;*/
-    background: $preto !important;
+    background: $preto  !important;
   }
 
   &:nth-of-type(1):after {
@@ -144,6 +143,7 @@
     transform: skewX(15deg);
     z-index: -1;
   }
+
   &:hover {
     cursor: pointer;
     color: $branco;
@@ -152,6 +152,7 @@
       width: 100%;
       left: 0;
     }
+
     &:nth-of-type(1):after {
       left: -10%;
       width: 120%;
@@ -159,7 +160,36 @@
 
   }
 
-  &:active{
+  &:active {
     color: $preto;
+  }
+}
+
+.button-link {
+  text-decoration: none !important;
+  color: $preto;
+  font-weight: 700;
+  position: relative;
+  font-style: 1.2em;
+
+  &:before {
+    content: '';
+    background-color: $roxo-roxo;
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    width: 100%;
+    height: 3px;
+    z-index: -1;
+    transition: all .3s ease-in-out;
+  }
+
+  &:hover {
+    color: $branco;
+
+    &:before {
+      bottom: 0;
+      height: 100%;
+    }
   }
 }
