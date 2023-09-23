@@ -1843,6 +1843,7 @@ div.wpcf7-response-output {
   background: #000000;
   position: relative;
   margin-bottom: 10px;
+  background-size: cover;
 }
 
 .content-posts .content-post__image:after {
@@ -1877,6 +1878,7 @@ div.wpcf7-response-output {
 .content-posts .content-post__categories {
   position: relative;
   top: 0;
+  z-index: 9;
 }
 
 .content-posts .content-post__text {

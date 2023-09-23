@@ -799,6 +799,7 @@ div.wpcf7-response-output {
       background: $preto;
       position: relative;
       margin-bottom: 10px;
+      background-size: cover;
 
       &:after {
         content: '';
@@ -833,6 +834,7 @@ div.wpcf7-response-output {
     &__categories {
       position: relative;
       top: 0;
+      z-index: 9;
     }
 
     &__text {

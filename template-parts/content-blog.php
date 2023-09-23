@@ -24,7 +24,7 @@ $last_posts = get_posts($args);
 
                         <div class="content-post mb-5">
 
-                            <div class="content-post__image">
+                            <div class="content-post__image" style="background-image: url(<?= get_the_post_thumbnail_url( $post->ID ) ?>)">
                                 <div class="content-post__categories">
 
                                     <ul class="list-inline tags">
@@ -52,6 +52,8 @@ $last_posts = get_posts($args);
 
                                     </ul>
                                 </div>
+
+                                
                             </div>
 
                         
