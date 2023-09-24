@@ -59,7 +59,7 @@ $last_posts = get_posts($args);
                         
                             <div class="content-post__box">
                                 <h3 class="content-post__title title-subtitle text-center">
-                                    <a href="<?php get_permalink( $post->ID )?>">
+                                    <a href="<?php echo get_permalink( $post->ID ); ?>">
                                         <?= get_the_title($post->ID) ?>
                                     </a>
                                 </h3>
@@ -72,7 +72,7 @@ $last_posts = get_posts($args);
                                 </p>
 
                                 <div class="d-block text-center">
-                                    <a href="<?php get_permalink( $post->ID )?>" class="content-post__button button-link p-2">Continuar lendo...</a>
+                                    <a href="<?= get_permalink( $post->ID ) ?>" class="content-post__button button-link p-2">Continuar lendo...</a>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +86,7 @@ $last_posts = get_posts($args);
 
     <div class="row">
         <div class="col-12 text-center">
-            <button class="button-effect">Ver todos</button>
+            <a href="/blog" class="button-effect">Ver todos</a>
         </div>
     </div>
 </section>
