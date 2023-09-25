@@ -14,39 +14,38 @@
 
 get_header(); ?>
 
-    <section id="home-quem-sou" class="content-section">
-        <div class="container">
-            <?php
-                $about_me   = "";
-                $photo_me   = "";
+<section id="home-quem-sou" class="content-section">
+    <div class="container">
+        <?php
+            $about_me   = "";
+            $photo_me   = "";
+        
+            $homeQuery = new WP_Query( 'pagename=home' );
             
-                $homeQuery = new WP_Query( 'pagename=home' );
-                
-                while ( $homeQuery->have_posts() ) : $homeQuery->the_post();
-                    $about_me   = get_the_content();
-                    $photo_me   = get_the_post_thumbnail();
-                endwhile;
+            while ( $homeQuery->have_posts() ) : $homeQuery->the_post();
+                $about_me   = get_the_content();
+                $photo_me   = get_the_post_thumbnail();
+            endwhile;
 
-                wp_reset_postdata();
-            ?>
+            wp_reset_postdata();
+        ?>
 
-            <div class="row">
-                <div class="col-sm-12 col-md-5 col-lg-4 text-center hidden">
-                    <div class="js-tilt" data-tilt>
-                        <?= $photo_me ?>
-                    </div>
-                </div>
-                <div class="col-sm-12 text-center">
-                    <p class="text-medium">
-                        <?= $about_me ?>
-                    </p>
-                    <a href="<?php echo get_site_url(); ?>/sobre-mim" class="button-effect">Continue Lendo...</a>
+        <div class="row">
+            <div class="col-sm-12 col-md-5 col-lg-4 text-center hidden">
+                <div class="js-tilt" data-tilt>
+                    <?= $photo_me ?>
                 </div>
             </div>
+            <div class="col-sm-12 text-center">
+                <p class="text-medium">
+                    <?= $about_me ?>
+                </p>
+                <a href="<?php echo get_site_url(); ?>/sobre-mim" class="button-effect">Continue Lendo...</a>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
-</div>
 
 <section id="home-trampos" class="content-full clearfix">
     <?php
