@@ -9,8 +9,8 @@
 
 get_header(); ?>
 
-<section id="primary" class="content-area col-sm-12 col-md-12 col-lg-8 offset-lg-2 mt-5">
-		<main id="main" class="site-main" role="main">
+<section id="primary" class="content-area container mt-5">
+	<main id="main" class="site-main" role="main">
 
 		<?php
 		while ( have_posts() ) : the_post();
@@ -22,12 +22,11 @@ get_header(); ?>
 
 			the_post_navigation();
 
-		endwhile; // End of the loop.
+		endwhile; 
 		?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+	</main>	
+</section>
 
 <?php
-/*get_sidebar();*/
 get_footer();

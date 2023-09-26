@@ -24,6 +24,27 @@ body {
   font-family: $font-default;
 }
 
+a {
+  color: $preto;
+  text-decoration: none !important;
+  font-weight: 700;
+
+  @extend .trans;
+
+  &:hover {
+    color: $dourado;
+    opacity: .9;
+  }
+}
+
+p {
+  font-size: 1.6em;
+}
+
+.bold {
+  font-weight: 700;
+}
+
 ::-webkit-scrollbar {
   width: 12px;
   /* for vertical scrollbars */
@@ -639,8 +660,6 @@ div.wpcf7-response-output {
 }
 
 .entry-header {
-  margin-bottom: 70px;
-
   .entry-meta {
     font-family: $font-dosis;
     font-size: 16px;
@@ -781,14 +800,14 @@ div.wpcf7-response-output {
   }
 }
 
-.sl-overlay { 
+.sl-overlay {
   opacity: 1;
-}     
+}
 
-.sl-counter { 
+.sl-counter {
   display: none !important;
 }
- 
+
 .content-posts {
   padding: 0;
   margin: 0;
@@ -812,17 +831,17 @@ div.wpcf7-response-output {
       padding: 15px;
     }
 
-    &__title {      
+    &__title {
       min-height: 50px;
-      
+
       a {
         color: $preto;
-        text-decoration: none;        
+        text-decoration: none;
         font-size: 1.1em;
 
         &:hover {
           opacity: .9;
-          color: $roxo;
+          color: $dourado;
         }
       }
     }
@@ -866,7 +885,7 @@ div.wpcf7-response-output {
 .tags a {
   margin-left: 1em;
   padding: 0 8px 0 10px;
-  background: $roxo-roxo;
+  background: $dourado;
   color: $branco;
   text-decoration: none;
   -moz-border-radius-bottomright: 4px;
@@ -886,7 +905,7 @@ div.wpcf7-response-output {
     left: -12px;
     width: 0;
     height: 0;
-    border-color: transparent $roxo-roxo transparent transparent;
+    border-color: transparent $dourado transparent transparent;
     border-style: solid;
     border-width: 12px 12px 14px 0;
   }
@@ -902,10 +921,10 @@ div.wpcf7-response-output {
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border-radius: 2px;
-    background: #fff;
-    -moz-box-shadow: -1px -1px 2px #004977;
-    -webkit-box-shadow: -1px -1px 2px #004977;
-    box-shadow: -1px -1px 2px #004977;
+    background: $branco;
+    -moz-box-shadow: -1px -1px 2px $dourado-light;
+    -webkit-box-shadow: -1px -1px 2px $dourado-light;
+    box-shadow: -1px -1px 2px $dourado-light;
   }
 
   &:hover {
@@ -913,6 +932,37 @@ div.wpcf7-response-output {
 
     &:before {
       border-color: transparent #555 transparent transparent;
+    }
+  }
+}
+
+.wp-block-image {
+  figcaption {
+    margin-top: 0;
+    font-size: 1.1em;
+    font-style: italic;
+  }
+}
+
+.content-search {
+  article {
+    margin-bottom: 1em;
+    border: 2px solid transparent;
+    padding: 25px;
+    border-radius: 6px;
+
+    @extend .trans;
+
+    &:hover {
+      border: 2px solid $preto;
+    }
+  }
+}
+
+.widget_recent_entries {
+  .nav-link {
+    &:hover {
+
     }
   }
 }

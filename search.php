@@ -6,44 +6,46 @@
  *
  * @package WP_Bootstrap_Starter
  */
-wp_redirect( 404 );
-exit();
+//wp_redirect( 404 );
+//exit();
+
 get_header(); ?>
 
-	<section id="primary" class="content-area col-sm-12 col-md-12 col-lg-8">
-		<main id="main" class="site-main" role="main">
-
-		<?php
-		if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'wp-bootstrap-starter' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
+<section id="primary" class="content-area content-section content-search container mt-5">
+	<div class="row">
+		<main id="main" class="site-main col-12 col-md-8 col-lg-7" role="main">
 
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+			if (have_posts()): ?>
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+				<header class="page-header mb-5">
+					<h1 class="page-title">
+						<?php printf(esc_html__('Resultados da pesquisa para: %s', 'wp-bootstrap-starter'), '<span class="bold">' . get_search_query() . '</span>'); ?>
+					</h1>
+				</header>
 
-			endwhile;
+				<?php
+				while (have_posts()):
+					the_post();
 
-			the_posts_navigation();
+					get_template_part('template-parts/content', 'search');
 
-		else :
+				endwhile;
 
-			get_template_part( 'template-parts/content', 'none' );
+				the_posts_navigation();
 
-		endif; ?>
+			else:
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+				get_template_part('template-parts/content', 'none');
+
+			endif; ?>
+
+		</main>
+		<div class="col-12 col-md-4 col-lg-4 offset-lg-1">
+			<?php get_sidebar(); ?>
+		</div>
+	</div>
+</section>
 
 <?php
-get_sidebar();
 get_footer();

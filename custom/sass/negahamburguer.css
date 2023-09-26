@@ -19,12 +19,12 @@
 
 .trans, .title-post, .title-post:after, .input-text,
 .input-textarea, .button-black, .wpcf7-submit, .btn-continue-lendo:after, .menu-full-custom, .site-header, .scroll-to-bottom, .full-top-bar .list-social-icons li a i, #menu-menu-header li a, .fixed-nav,
-.full-top-bar, .site-nome a, .site-info .devby, .site-info .link-devby, .site-info .link-devby:before, .site-info .link-devby:after, .pagination span,
+.full-top-bar, .site-nome a, .site-info .devby, .site-info .link-devby, .site-info .link-devby:before, .site-info .link-devby:after, a, .pagination span,
 .pagination a, .nav-links .nav-previous a,
 .nav-links .nav-next a, .nav-links .nav-previous a:after, .nav-links .nav-previous a:before,
 .nav-links .nav-next a:after,
 .nav-links .nav-next a:before, .square, .content-lazy-loading__image, .sl-wrapper .sl-navigation button.sl-prev,
-.sl-wrapper .sl-navigation button.sl-next, .tags a, #home-trampos .list-trampos li {
+.sl-wrapper .sl-navigation button.sl-next, .tags a, .content-search article, #home-trampos .list-trampos li {
   -webkit-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
 }
@@ -147,6 +147,10 @@
   font-weight: 700;
   margin-bottom: 8px;
   font-family: "Dosis", sans-serif;
+}
+
+.widget-title {
+  font-weight: 700;
 }
 
 .input-text,
@@ -417,7 +421,7 @@ textarea.wpcf7-not-valid{
 
 .button-link:before {
   content: '';
-  background-color: #761fda;
+  background-color: #dcad54;
   position: absolute;
   left: 0;
   bottom: 3px;
@@ -973,6 +977,7 @@ textarea.wpcf7-not-valid{
   background-color: #000000 !important;
   padding-top: 30px;
   padding-bottom: 10px;
+  margin-top: 100px;
 }
 
 .logo-footer {
@@ -1050,11 +1055,6 @@ textarea.wpcf7-not-valid{
   content: '>>';
 }
 
-footer {
-  padding: 30px 0 10px !important;
-  margin-top: 10em;
-}
-
 @media (max-width: 450px) {
   .site-nome,
   .dev-sign {
@@ -1107,6 +1107,25 @@ body {
   z-index: 10;
   position: relative;
   font-family: "Dosis", serif;
+}
+
+a {
+  color: #000000;
+  text-decoration: none !important;
+  font-weight: 700;
+}
+
+a:hover {
+  color: #dcad54;
+  opacity: .9;
+}
+
+p {
+  font-size: 1.6em;
+}
+
+.bold {
+  font-weight: 700;
 }
 
 ::-webkit-scrollbar {
@@ -1698,10 +1717,6 @@ div.wpcf7-response-output {
   font-size: 30px;
 }
 
-.entry-header {
-  margin-bottom: 70px;
-}
-
 .entry-header .entry-meta {
   font-family: "Dosis", sans-serif;
   font-size: 16px;
@@ -1867,7 +1882,7 @@ div.wpcf7-response-output {
 
 .content-posts .content-post__title a:hover {
   opacity: .9;
-  color: #5b2461;
+  color: #dcad54;
 }
 
 .content-posts .content-post__date {
@@ -1907,7 +1922,7 @@ div.wpcf7-response-output {
 .tags a {
   margin-left: 1em;
   padding: 0 8px 0 10px;
-  background: #761fda;
+  background: #dcad54;
   color: #FFFFFF;
   text-decoration: none;
   border-bottom-right-radius: 4px;
@@ -1922,7 +1937,7 @@ div.wpcf7-response-output {
   left: -12px;
   width: 0;
   height: 0;
-  border-color: transparent #761fda transparent transparent;
+  border-color: transparent #dcad54 transparent transparent;
   border-style: solid;
   border-width: 12px 12px 14px 0;
 }
@@ -1936,9 +1951,9 @@ div.wpcf7-response-output {
   width: 4px;
   height: 4px;
   border-radius: 2px;
-  background: #fff;
-  -webkit-box-shadow: -1px -1px 2px #004977;
-  box-shadow: -1px -1px 2px #004977;
+  background: #FFFFFF;
+  -webkit-box-shadow: -1px -1px 2px #e3bd76;
+  box-shadow: -1px -1px 2px #e3bd76;
 }
 
 .tags a:hover {
@@ -1947,6 +1962,23 @@ div.wpcf7-response-output {
 
 .tags a:hover:before {
   border-color: transparent #555 transparent transparent;
+}
+
+.wp-block-image figcaption {
+  margin-top: 0;
+  font-size: 1.1em;
+  font-style: italic;
+}
+
+.content-search article {
+  margin-bottom: 1em;
+  border: 2px solid transparent;
+  padding: 25px;
+  border-radius: 6px;
+}
+
+.content-search article:hover {
+  border: 2px solid #000000;
 }
 
 @media (min-width: 320px) {
