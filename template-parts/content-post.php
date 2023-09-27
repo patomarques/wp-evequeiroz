@@ -9,7 +9,7 @@
 
 ?>
 
-<header class="entry-header">
+<header class="entry-header mb-5">
 	<?php
 	if ( is_single() ) :
 		the_title( '<h1 class="title-blog-post">', '</h1>' );

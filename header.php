@@ -55,7 +55,7 @@
         <?php if (!is_page_template('blank-page.php') && !is_page_template('blank-page-with-container.php')) : ?>
 
         <header
-          class="site-header navbar-static-top"
+          class="site-header navbar-static-top mb-5"
           role="banner"
         >
           <div class="full-top-bar d-none">

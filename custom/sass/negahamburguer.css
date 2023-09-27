@@ -658,7 +658,7 @@ textarea.wpcf7-not-valid{
   }
 }
 
-@media (min-width: 450px) {
+@media (min-width: 566px) {
   .menu-bars-fullscreen .menu {
     top: 32px;
   }

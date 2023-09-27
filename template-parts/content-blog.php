@@ -63,7 +63,7 @@ $last_posts = get_posts($args);
                                         <?= get_the_title($post->ID) ?>
                                     </a>
                                 </h3>
-                                <h5 class="content-post__date text-center mb-2">Postado em
+                                <h5 class="content-post__date text-center mb-3">Postado em
                                     <b><?= get_the_date('j \d\e F \d\e Y', $post->ID) ?></b>
                                 </h5>
 
