@@ -9,23 +9,30 @@ jQuery(document).ready(function ($) {
         return;
     });
 
-    // fix on top
-    $(window).bind('scroll', function () {
-        let alturaContent = $('.site-header').outerHeight();
-        let bodyHeight = $('#page').outerHeight();
-        
-        if ($(window).scrollTop() > alturaContent && bodyHeight > 1000) {
-            $('.site-header').stop(true, false).addClass('fixed-nav', { duration: 200000 });
-        } else {
-            $('.site-header').stop(true, false).removeClass('fixed-nav', { duration: 200000 });
-        }
-    });
+    let bodyHeight = $('#page').outerHeight();
+
+    if (bodyHeight > 1200) {
+        // fix on top
+        $(window).bind('scroll', function () {
+            let alturaContent = $('.site-header').outerHeight();
+
+
+            if ($(window).scrollTop() > alturaContent) {
+                $('.site-header').stop(true, false).addClass('fixed-nav', { duration: 200000 });
+            } else {
+                $('.site-header').stop(true, false).removeClass('fixed-nav', { duration: 200000 });
+            }
+        });
+    }else{
+        $('#primary').style('margin-top', '120px');
+        $('.site-header').stop(true, false).addClass('fixed-nav', { duration: 200000 });
+    }
 
     //image lightbox
     $(function () {
         var $gallery = $('.content-lazy-loading a').simpleLightbox();
         var $gallery = $('.grid .grid-item a').simpleLightbox();
-        
+
         $gallery.on('show.simplelightbox', function () { })
             .on('shown.simplelightbox', function () {
                 // console.log('Shown');

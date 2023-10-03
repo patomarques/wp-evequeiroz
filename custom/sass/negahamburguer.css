@@ -64,7 +64,7 @@
 .title-main {
   font-family: "Rock Salt", cursive;
   text-transform: lowercase;
-  font-size: 32px !important;
+  font-size: 2rem !important;
 }
 
 .title-midia {
@@ -77,7 +77,6 @@
 }
 
 .title-tag {
-  /*font-family: $font-adrip !important;*/
   font-family: "Dosis", sans-serif;
   word-spacing: 4px;
   font-size: 3em;
@@ -1121,7 +1120,19 @@ a:hover {
 }
 
 p {
-  font-size: 1.6em;
+  font-size: 1.4em;
+}
+
+p.minor {
+  font-size: 1em;
+}
+
+p.medium {
+  font-size: 1.2em;
+}
+
+p.big {
+  font-size: 1.4em;
 }
 
 .bold {
@@ -1146,8 +1157,8 @@ p {
 
 .content-main {
   width: 100%;
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .container-full {
@@ -1623,11 +1634,6 @@ figure.effect-bubba:hover p {
   height: auto;
 }
 
-.title-tag {
-  margin: 0 auto 50px;
-  /*text-decoration: underline overline;*/
-}
-
 .wpcf7-not-valid {
   background-color: #FF8B86;
   outline: none !important;
@@ -1819,13 +1825,13 @@ div.wpcf7-response-output {
   width: 100%;
   cursor: pointer;
   margin-bottom: 0.3em;
-  -webkit-filter: grayscale(1);
-          filter: grayscale(1);
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
 }
 
 .content-lazy-loading__image:hover {
-  -webkit-filter: grayscale(0);
-          filter: grayscale(0);
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
 }
 
 .sl-wrapper .sl-navigation button.sl-prev,
@@ -2391,28 +2397,24 @@ main {
 /* Medium devices (desktops, 992px and up) */
 /* Large devices (large desktops, 1200px and up) */
 .list-postagens {
-  /*margin: 0;
-  width: 100%;*/
-  /*position: relative;*/
   width: 100%;
   text-align: center;
   margin: 0 auto;
   display: block;
   position: relative;
+  -webkit-columns: 3;
+          columns: 3;
 }
 
 .list-postagens .box-post {
-  float: left;
-  width: 32%;
   height: auto;
   position: relative;
-  margin: 0 6px 20px;
   background-color: #f6f6f6 !important;
+  margin-bottom: 20px;
 }
 
 .list-postagens .box-post .imagem {
   width: 100%;
-  /*height: 220px;*/
   top: 0;
   left: 0;
 }
@@ -2481,6 +2483,48 @@ main {
   z-index: 10;
   overflow: hidden;
   margin-bottom: 15px;
+}
+
+.grid-posts .grid-post {
+  background-color: #f6f6f6;
+  margin-bottom: 20px;
+}
+
+.grid-posts .grid-post__image {
+  position: relative;
+}
+
+.grid-posts .grid-post__category {
+  position: relative;
+  right: 0;
+}
+
+.grid-posts .grid-post__categories {
+  position: absolute;
+  z-index: 99;
+  right: 0;
+  margin: .5rem;
+}
+
+.grid-posts .grid-post__categories__item {
+  position: relative;
+}
+
+.grid-posts .grid-post__box {
+  padding: 20px;
+}
+
+.post-thumbnail {
+  position: relative;
+}
+
+.post-tags {
+  position: relative;
+}
+
+.post-tags .tags {
+  position: relative;
+  right: 0;
 }
 
 /* Media Queries

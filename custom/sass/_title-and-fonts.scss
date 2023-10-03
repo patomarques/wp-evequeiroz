@@ -19,16 +19,12 @@ $font-adrip: 'Adrip1', cursive;
 /*$font-default: 'Neucha', cursive;*/
 $font-default: 'Dosis', serif;
 $font-title-main: 'Rock Salt', cursive;
-/*
-+   Titles, subtitles and anything
-*/
 
 $font-poret: 'Poiret One', cursive;
 $font-badscript: 'Bad Script', cursive;
 $font-cabin: 'Cabin Sketch', cursive;
 $font-dosis: 'Dosis', sans-serif;
 $title-menu: 'Economica', sans-serif;
-$title-midia: $font-badscript;
 
 .title-medjium{
   font-size: 30px;
@@ -38,7 +34,7 @@ $title-midia: $font-badscript;
 .title-main{
   font-family: $font-title-main;
   text-transform: lowercase;
-  font-size: 32px !important;
+  font-size: 2rem !important;
 }
 
 .title-midia{
@@ -51,7 +47,6 @@ $title-midia: $font-badscript;
 }
 
 .title-tag{
-  /*font-family: $font-adrip !important;*/
   font-family: $font-title;
   word-spacing: 4px;
   font-size: 3em;

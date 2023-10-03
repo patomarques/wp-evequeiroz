@@ -7,74 +7,77 @@
  * @package WP_Bootstrap_Starter
  */
 
-if ( ! function_exists( 'wp_bootstrap_starter_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function wp_bootstrap_starter_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on WP Bootstrap Starter, use a find and replace
-	 * to change 'wp-bootstrap-starter' to the name of your theme in all the template files.
-	 */
-	load_theme_textdomain( 'wp-bootstrap-starter', get_template_directory() . '/languages' );
+if (!function_exists('wp_bootstrap_starter_setup')):
+    /**
+     * Sets up theme defaults and registers support for various WordPress features.
+     *
+     * Note that this function is hooked into the after_setup_theme hook, which
+     * runs before the init hook. The init hook is too late for some features, such
+     * as indicating support for post thumbnails.
+     */
+    function wp_bootstrap_starter_setup()
+    {
+        /*
+         * Make theme available for translation.
+         * Translations can be filed in the /languages/ directory.
+         * If you're building a theme based on WP Bootstrap Starter, use a find and replace
+         * to change 'wp-bootstrap-starter' to the name of your theme in all the template files.
+         */
+        load_theme_textdomain('wp-bootstrap-starter', get_template_directory() . '/languages');
 
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
+        // Add default posts and comments RSS feed links to head.
+        add_theme_support('automatic-feed-links');
 
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
-	add_theme_support( 'title-tag' );
+        /*
+         * Let WordPress manage the document title.
+         * By adding theme support, we declare that this theme does not use a
+         * hard-coded <title> tag in the document head, and expect WordPress to
+         * provide it for us.
+         */
+        add_theme_support('title-tag');
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-	 */
-	add_theme_support( 'post-thumbnails' );
+        /*
+         * Enable support for Post Thumbnails on posts and pages.
+         *
+         * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+         */
+        add_theme_support('post-thumbnails');
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'wp-bootstrap-starter' ),
-	) );
+        // This theme uses wp_nav_menu() in one location.
+        register_nav_menus(
+            array(
+                'primary' => esc_html__('Primary', 'wp-bootstrap-starter'),
+            ));
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	) );
+        /*
+         * Switch default core markup for search form, comment form, and comments
+         * to output valid HTML5.
+         */
+        add_theme_support('html5', array(
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption',
+        ));
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'wp_bootstrap_starter_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
+        // Set up the WordPress core custom background feature.
+        add_theme_support('custom-background', apply_filters('wp_bootstrap_starter_custom_background_args', array(
+            'default-color' => 'ffffff',
+            'default-image' => '',
+        )));
 
-	// Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
+        // Add theme support for selective refresh for widgets.
+        add_theme_support('customize-selective-refresh-widgets');
 
-    function wp_boostrap_starter_add_editor_styles() {
-        add_editor_style( 'custom-editor-style.css' );
+        function wp_boostrap_starter_add_editor_styles()
+        {
+            add_editor_style('custom-editor-style.css');
+        }
+        add_action('admin_init', 'wp_boostrap_starter_add_editor_styles');
+
     }
-    add_action( 'admin_init', 'wp_boostrap_starter_add_editor_styles' );
-
-}
 endif;
-add_action( 'after_setup_theme', 'wp_bootstrap_starter_setup' );
+add_action('after_setup_theme', 'wp_bootstrap_starter_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -83,120 +86,120 @@ add_action( 'after_setup_theme', 'wp_bootstrap_starter_setup' );
  *
  * @global int $content_width
  */
-function wp_bootstrap_starter_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'wp_bootstrap_starter_content_width', 1170 );
+function wp_bootstrap_starter_content_width()
+{
+    $GLOBALS['content_width'] = apply_filters('wp_bootstrap_starter_content_width', 1170);
 }
-add_action( 'after_setup_theme', 'wp_bootstrap_starter_content_width', 0 );
+add_action('after_setup_theme', 'wp_bootstrap_starter_content_width', 0);
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function wp_bootstrap_starter_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'wp-bootstrap-starter' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'wp-bootstrap-starter' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-    register_sidebar( array(
-        'name'          => esc_html__( 'Footer 1', 'wp-bootstrap-starter' ),
-        'id'            => 'footer-1',
-        'description'   => esc_html__( 'Add widgets here.', 'wp-bootstrap-starter' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ) );
-    register_sidebar( array(
-        'name'          => esc_html__( 'Footer 2', 'wp-bootstrap-starter' ),
-        'id'            => 'footer-2',
-        'description'   => esc_html__( 'Add widgets here.', 'wp-bootstrap-starter' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ) );
-    register_sidebar( array(
-        'name'          => esc_html__( 'Footer 3', 'wp-bootstrap-starter' ),
-        'id'            => 'footer-3',
-        'description'   => esc_html__( 'Add widgets here.', 'wp-bootstrap-starter' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ) );
+function wp_bootstrap_starter_widgets_init()
+{
+    register_sidebar(
+        array(
+            'name' => esc_html__('Sidebar', 'wp-bootstrap-starter'),
+            'id' => 'sidebar-1',
+            'description' => esc_html__('Add widgets here.', 'wp-bootstrap-starter'),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget' => '</section>',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        ));
+    register_sidebar(
+        array(
+            'name' => esc_html__('Footer 1', 'wp-bootstrap-starter'),
+            'id' => 'footer-1',
+            'description' => esc_html__('Add widgets here.', 'wp-bootstrap-starter'),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget' => '</section>',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        ));
+    register_sidebar(
+        array(
+            'name' => esc_html__('Footer 2', 'wp-bootstrap-starter'),
+            'id' => 'footer-2',
+            'description' => esc_html__('Add widgets here.', 'wp-bootstrap-starter'),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget' => '</section>',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        ));
+    register_sidebar(
+        array(
+            'name' => esc_html__('Footer 3', 'wp-bootstrap-starter'),
+            'id' => 'footer-3',
+            'description' => esc_html__('Add widgets here.', 'wp-bootstrap-starter'),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget' => '</section>',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        ));
 }
-add_action( 'widgets_init', 'wp_bootstrap_starter_widgets_init' );
+add_action('widgets_init', 'wp_bootstrap_starter_widgets_init');
 
+function wp_bootstrap_starter_scripts()
+{
+    wp_enqueue_style('wp-bootstrap-starter-bootstrap-css', get_template_directory_uri() . '/inc/assets/css/bootstrap.min.css');
+    wp_enqueue_style('wp-bootstrap-starter-font-awesome', get_template_directory_uri() . '/inc/assets/css/font-awesome.min.css', false, '4.1.0');
 
-
-/**
- * Enqueue scripts and styles.
- */
-function wp_bootstrap_starter_scripts() {
-	// load bootstrap css
-	wp_enqueue_style( 'wp-bootstrap-starter-bootstrap-css', get_template_directory_uri() . '/inc/assets/css/bootstrap.min.css' );
-	// load bootstrap css
-	wp_enqueue_style( 'wp-bootstrap-starter-font-awesome', get_template_directory_uri() . '/inc/assets/css/font-awesome.min.css', false, '4.1.0' );
-	// load AItheme styles
-	// load WP Bootstrap Starter styles
-	wp_enqueue_style( 'wp-bootstrap-starter-style', get_stylesheet_uri() );
-    if(get_theme_mod( 'preset_style_setting' ) === 'poppins-lora') {
-        wp_enqueue_style( 'wp-bootstrap-starter-poppins-lora-font', 'https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Poppins:300,400,500,600,700' );
+    wp_enqueue_style('wp-bootstrap-starter-style', get_stylesheet_uri());
+    if (get_theme_mod('preset_style_setting') === 'poppins-lora') {
+        wp_enqueue_style('wp-bootstrap-starter-poppins-lora-font', 'https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Poppins:300,400,500,600,700');
     }
-    if(get_theme_mod( 'preset_style_setting' ) === 'montserrat-merriweather') {
-        wp_enqueue_style( 'wp-bootstrap-starter-montserrat-merriweather-font', 'https://fonts.googleapis.com/css?family=Merriweather:300,400,400i,700,900|Montserrat:300,400,400i,500,700,800' );
+    if (get_theme_mod('preset_style_setting') === 'montserrat-merriweather') {
+        wp_enqueue_style('wp-bootstrap-starter-montserrat-merriweather-font', 'https://fonts.googleapis.com/css?family=Merriweather:300,400,400i,700,900|Montserrat:300,400,400i,500,700,800');
     }
-    if(get_theme_mod( 'preset_style_setting' ) === 'poppins-poppins') {
-        wp_enqueue_style( 'wp-bootstrap-starter-poppins-font', 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700' );
+    if (get_theme_mod('preset_style_setting') === 'poppins-poppins') {
+        wp_enqueue_style('wp-bootstrap-starter-poppins-font', 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
     }
-    if(get_theme_mod( 'preset_style_setting' ) === 'roboto-roboto') {
-        wp_enqueue_style( 'wp-bootstrap-starter-roboto-font', 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i' );
+    if (get_theme_mod('preset_style_setting') === 'roboto-roboto') {
+        wp_enqueue_style('wp-bootstrap-starter-roboto-font', 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i');
     }
-    if(get_theme_mod( 'preset_style_setting' ) === 'arbutusslab-opensans') {
-        wp_enqueue_style( 'wp-bootstrap-starter-arbutusslab-opensans-font', 'https://fonts.googleapis.com/css?family=Arbutus+Slab|Open+Sans:300,300i,400,400i,600,600i,700,800' );
+    if (get_theme_mod('preset_style_setting') === 'arbutusslab-opensans') {
+        wp_enqueue_style('wp-bootstrap-starter-arbutusslab-opensans-font', 'https://fonts.googleapis.com/css?family=Arbutus+Slab|Open+Sans:300,300i,400,400i,600,600i,700,800');
     }
-    if(get_theme_mod( 'preset_style_setting' ) && get_theme_mod( 'preset_style_setting' ) !== 'default') {
-        wp_enqueue_style( 'wp-bootstrap-starter-'.get_theme_mod( 'preset_style_setting' ), get_template_directory_uri() . '/inc/assets/css/presets/'.get_theme_mod( 'preset_style_setting' ).'.css', false, '' );
+    if (get_theme_mod('preset_style_setting') && get_theme_mod('preset_style_setting') !== 'default') {
+        wp_enqueue_style('wp-bootstrap-starter-' . get_theme_mod('preset_style_setting'), get_template_directory_uri() . '/inc/assets/css/presets/' . get_theme_mod('preset_style_setting') . '.css', false, '');
     }
 
-	wp_enqueue_script('jquery');
+    wp_enqueue_script('jquery');
 
     // Internet Explorer HTML5 support
-    wp_enqueue_script( 'html5hiv',get_template_directory_uri().'/inc/assets/js/html5.js', array(), '3.7.0', false );
-    wp_script_add_data( 'html5hiv', 'conditional', 'lt IE 9' );
+    wp_enqueue_script('html5hiv', get_template_directory_uri() . '/inc/assets/js/html5.js', array(), '3.7.0', false);
+    wp_script_add_data('html5hiv', 'conditional', 'lt IE 9');
 
-	// load bootstrap js
-    wp_enqueue_script('wp-bootstrap-starter-tether', get_template_directory_uri() . '/inc/assets/js/tether.min.js', array() );
-	wp_enqueue_script('wp-bootstrap-starter-bootstrapjs', get_template_directory_uri() . '/inc/assets/js/bootstrap.min.js', array() );
-    wp_enqueue_script('wp-bootstrap-starter-themejs', get_template_directory_uri() . '/inc/assets/js/theme-script.js', array() );
-	wp_enqueue_script( 'wp-bootstrap-starter-skip-link-focus-fix', get_template_directory_uri() . '/inc/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
+    // load bootstrap js
+    wp_enqueue_script('wp-bootstrap-starter-tether', get_template_directory_uri() . '/inc/assets/js/tether.min.js', array());
+    wp_enqueue_script('wp-bootstrap-starter-bootstrapjs', get_template_directory_uri() . '/inc/assets/js/bootstrap.min.js', array());
+    wp_enqueue_script('wp-bootstrap-starter-themejs', get_template_directory_uri() . '/inc/assets/js/theme-script.js', array());
+    wp_enqueue_script('wp-bootstrap-starter-skip-link-focus-fix', get_template_directory_uri() . '/inc/assets/js/skip-link-focus-fix.js', array(), '20151215', true);
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+    if (is_singular() && comments_open() && get_option('thread_comments')) {
+        wp_enqueue_script('comment-reply');
+    }
 
-    wp_enqueue_style( 'simplelightbox', get_template_directory_uri() . '/custom/css/simplelightbox.min.css' );
+    wp_enqueue_style('simplelightbox', get_template_directory_uri() . '/custom/css/simplelightbox.min.css');
 
 }
-add_action( 'wp_enqueue_scripts', 'wp_bootstrap_starter_scripts' );
+add_action('wp_enqueue_scripts', 'wp_bootstrap_starter_scripts');
 
 
-function wp_bootstrap_starter_password_form() {
+function wp_bootstrap_starter_password_form()
+{
     global $post;
-    $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
-    $o = '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
-    <div class="d-block mb-3">' . __( "To view this protected post, enter the password below:", "wp-bootstrap-starter" ) . '</div>
-    <div class="form-group form-inline"><label for="' . $label . '" class="mr-2">' . __( "Password:", "wp-bootstrap-starter" ) . ' </label><input name="post_password" id="' . $label . '" type="password" size="20" maxlength="20" class="form-control mr-2" /> <input type="submit" name="Submit" value="' . esc_attr__( "Submit", "wp-bootstrap-starter" ) . '" class="btn btn-primary"/></div>
+    $label = 'pwbox-' . (empty($post->ID) ? rand() : $post->ID);
+    $o = '<form action="' . esc_url(site_url('wp-login.php?action=postpass', 'login_post')) . '" method="post">
+    <div class="d-block mb-3">' . __("To view this protected post, enter the password below:", "wp-bootstrap-starter") . '</div>
+    <div class="form-group form-inline"><label for="' . $label . '" class="mr-2">' . __("Password:", "wp-bootstrap-starter") . ' </label><input name="post_password" id="' . $label . '" type="password" size="20" maxlength="20" class="form-control mr-2" /> <input type="submit" name="Submit" value="' . esc_attr__("Submit", "wp-bootstrap-starter") . '" class="btn btn-primary"/></div>
     </form>';
     return $o;
 }
-add_filter( 'the_password_form', 'wp_bootstrap_starter_password_form' );
+add_filter('the_password_form', 'wp_bootstrap_starter_password_form');
 
 
 
@@ -228,39 +231,24 @@ require get_template_directory() . '/inc/plugin-compatibility/plugin-compatibili
 /**
  * Load custom WordPress nav walker.
  */
-if ( ! class_exists( 'wp_bootstrap_navwalker' )) {
+if (!class_exists('wp_bootstrap_navwalker')) {
     require_once(get_template_directory() . '/inc/wp_bootstrap_navwalker.php');
 }
 
-show_admin_bar( false );
+show_admin_bar(false);
 
-function create_post_type() {
-    register_post_type( 'aquarela',
+function create_post_type()
+{
+    register_post_type(
+        'aquarela',
         array(
             'labels' => array(
-                'name' => __( 'Ilustração' ),
-                'singular_name' => __( 'Ilustração' )
+                'name' => __('Ilustração'),
+                'singular_name' => __('Ilustração')
             ),
             'public' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'aquarela'),
-			'supports' => array(
-                'title',
-                'editor',
-                'thumbnail',
-                'page-attributes'
-            )
-        )
-    );
-
-    register_post_type( 'handpoke-tatto',
-        array(
-            'labels' => array(
-                'name' => __( 'Handpoke Tattoo' ),
-                'singular_name' => __( 'Handpoke Tattoo' )
-            ),
-            'public' => true,
-            'has_archive' => true,
             'supports' => array(
                 'title',
                 'editor',
@@ -270,35 +258,12 @@ function create_post_type() {
         )
     );
 
-    register_post_type( 'lambe-lambe-stickers',
+    register_post_type(
+        'handpoke-tatto',
         array(
             'labels' => array(
-                'name' => __( 'Lambe-Lambe / Sticker' ),
-                'singular_name' => __( 'Lambe-Lambe Stickers' )
-            ),
-            'public' => true,
-            'has_archive' => true,
-            'supports' => array(
-                'title',
-                'editor',
-                //'excerpt',
-                'thumbnail',
-                //'author',
-                //'trackbacks',
-                //'custom-fields',
-                //'comments',
-                //'revisions',
-                'page-attributes', // (menu order, hierarchical must be true to show Parent option)
-                //'post-formats',
-            )
-        )
-    );
-
-    register_post_type( 'graffiti',
-        array(
-            'labels' => array(
-                'name' => __( 'Graffiti' ),
-                'singular_name' => __( 'graffiti' )
+                'name' => __('Handpoke Tattoo'),
+                'singular_name' => __('Handpoke Tattoo')
             ),
             'public' => true,
             'has_archive' => true,
@@ -311,70 +276,82 @@ function create_post_type() {
         )
     );
 
-//    register_post_type( 'home-slider',
-//        array(
-//            'labels' => array(
-//                'name' => __( 'Slider Home' ),
-//                'singular_name' => __( 'home-slider' )
-//            ),
-//            'public' => true,
-//            'has_archive' => true,
-//        )
-//    );
-
-
-    register_post_type( 'videos',
+    register_post_type(
+        'lambe-lambe-stickers',
         array(
             'labels' => array(
-                'name' => __( 'Vídeos' ),
-                'singular_name' => __( 'videos' )
+                'name' => __('Lambe-Lambe / Sticker'),
+                'singular_name' => __('Lambe-Lambe Stickers')
             ),
             'public' => true,
             'has_archive' => true,
             'supports' => array(
                 'title',
-                //'editor',
+                'editor',
+                'thumbnail',
+                'page-attributes',
+            )
+        )
+    );
+
+    register_post_type(
+        'graffiti',
+        array(
+            'labels' => array(
+                'name' => _('Graffiti'),
+                'singular_name' => _('graffiti')
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'supports' => array(
+                'title',
+                'editor',
+                'thumbnail',
+                'page-attributes'
+            )
+        )
+    );
+
+    register_post_type(
+        'videos',
+        array(
+            'labels' => array(
+                'name' => _('Vídeos'),
+                'singular_name' => _('videos')
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'supports' => array(
+                'title',
                 'excerpt',
-                //'thumbnail',
-                //'author',
-                //'trackbacks',
-                //'custom-fields',
-                //'comments',
-                //'revisions',
-                //'page-attributes', // (menu order, hierarchical must be true to show Parent option)
-                //'post-formats',
             )
         )
     );
 
-    register_post_type( 'midias',
+    register_post_type(
+        'midias',
         array(
             'labels' => array(
-                'name' => __( 'Midia' ),
-                'singular_name' => __( 'midias' )
+                'name' => __('Midia'),
+                'singular_name' => __('midias')
             ),
             'public' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'midias'),
-            'taxonomies'          => array('topics', 'category' ),
+            'taxonomies' => array('topics', 'category'),
             'supports' => array(
                 'title',
                 'editor',
-                //'excerpt',
-                //'thumbnail',
-                //'author',
-                //'trackbacks',
-                //'custom-fields',
-                //'comments',
-                //'revisions',
-                //'page-attributes', // (menu order, hierarchical must be true to show Parent option)
-                //'post-formats',
             )
         )
     );
 }
 
-add_action( 'init', 'create_post_type' );
+add_action('init', 'create_post_type');
+
+function showNoImage() {
+    return "<img src='" . esc_url( get_template_directory_uri() . '/custom/img/no-image.jpg' ) . "' alt='Nenhuma Imagem' title='Nenhuma Imagem' />";
+}
 
 function wp_add_import_scripts()
 {
@@ -382,43 +359,45 @@ function wp_add_import_scripts()
     //wp_register_script( 'custom-script', plugins_url( '/js/custom-script.js', __FILE__ ), array( 'jquery' ) );
     // or
     // Register the script like this for a theme:
-    wp_register_script( 'modernizr-script', get_template_directory_uri() . '/custom/js/modernizr.js', array( 'jquery' ) );
-    wp_enqueue_script( 'modernizr-script' );
-  
-    wp_register_script( 'parallaxie-script', get_template_directory_uri() . '/bower_components/parallaxie/parallaxie.js', array( 'jquery' ) );
-    wp_enqueue_script( 'parallaxie-script' );
+    wp_register_script('modernizr-script', get_template_directory_uri() . '/custom/js/modernizr.js', array('jquery'));
+    wp_enqueue_script('modernizr-script');
 
-    wp_register_script( 'simple-lightbox', get_template_directory_uri() . '/custom/js/simple-lightbox.js' );
-    wp_enqueue_script( 'simple-lightbox' );
+    wp_register_script('parallaxie-script', get_template_directory_uri() . '/bower_components/parallaxie/parallaxie.js', array('jquery'));
+    wp_enqueue_script('parallaxie-script');
 
-    wp_register_script( 'scrollbar-js', get_template_directory_uri() . '/custom/js/Scrollbar.js' );
-    wp_enqueue_script( 'scrollbar-js' );
+    wp_register_script('simple-lightbox', get_template_directory_uri() . '/custom/js/simple-lightbox.js');
+    wp_enqueue_script('simple-lightbox');
 
-    wp_register_script( 'theme-script', get_template_directory_uri() . '/custom/js/evequeiroz.js', array( 'jquery' ) );
-    wp_enqueue_script( 'theme-script' );
+    wp_register_script('scrollbar-js', get_template_directory_uri() . '/custom/js/Scrollbar.js');
+    wp_enqueue_script('scrollbar-js');
 
-    wp_register_script( 'theme-script', get_template_directory_uri() . '/custom/js/lazy-loading.js', array( 'jquery' ) );
-    wp_enqueue_script( 'theme-script' );
+    wp_register_script('theme-script', get_template_directory_uri() . '/custom/js/evequeiroz.js', array('jquery'));
+    wp_enqueue_script('theme-script');
+
+    wp_register_script('theme-script', get_template_directory_uri() . '/custom/js/lazy-loading.js', array('jquery'));
+    wp_enqueue_script('theme-script');
 
     // For either a plugin or a theme, you can then enqueue the script:
     //wp_enqueue_script( 'custom-script' );
 }
-add_action( 'wp_enqueue_scripts', 'wp_add_import_scripts' );
+add_action('wp_enqueue_scripts', 'wp_add_import_scripts');
 
-add_theme_support( 'post-thumbnails', array( 'post', 'Midia' ) );
+add_theme_support('post-thumbnails', array('post', 'Midia'));
 
-function custom_excerpt_length( $length ) {
+function custom_excerpt_length($length)
+{
     return 20;
 }
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+add_filter('excerpt_length', 'custom_excerpt_length', 999);
 
-function custom_pagination($numpages = '', $pagerange = '', $paged='') {
+function custom_pagination($numpages = '', $pagerange = '', $paged = '')
+{
 
     if (empty($pagerange)) {
         $pagerange = 2;
     }
 
-    global $paged;
+    global $paged;    
 
     if (empty($paged)) {
         $paged = 1;
@@ -429,25 +408,25 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='') {
 
         $numpages = $wp_query->max_num_pages;
 
-        if(!$numpages) {
+        if (!$numpages) {
             $numpages = 1;
         }
     }
 
     $pagination_args = array(
-        'base'            => get_pagenum_link(1) . '%_%',
-        'format'          => 'page/%#%',
-        'total'           => $numpages,
-        'current'         => $paged,
-        'show_all'        => False,
-        'end_size'        => 1,
-        'mid_size'        => $pagerange,
-        'prev_next'       => True,
-        'prev_text'       => __('&laquo;'),
-        'next_text'       => __('&raquo;'),
-        'type'            => 'plain',
-        'add_args'        => false,
-        'add_fragment'    => ''
+        'base' => get_pagenum_link(1) . '%_%',
+        'format' => 'page/%#%',
+        'total' => $numpages,
+        'current' => $paged,
+        'show_all' => False,
+        'end_size' => 1,
+        'mid_size' => $pagerange,
+        'prev_next' => True,
+        'prev_text' => _('&laquo;'),
+        'next_text' => _('&raquo;'),
+        'type' => 'plain',
+        'add_args' => false,
+        'add_fragment' => ''
     );
 
     $paginate_links = paginate_links($pagination_args);
@@ -459,3 +438,4 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='') {
         echo "</div>";
     }
 }
+

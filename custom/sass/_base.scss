@@ -38,7 +38,20 @@ a {
 }
 
 p {
-  font-size: 1.6em;
+  font-size: 1.4em;
+
+  &.minor {
+    font-size: 1em;
+  }
+
+  &.medium {
+    font-size: 1.2em;
+  }
+
+  &.big {
+    font-size: 1.4em;
+
+  }
 }
 
 .bold {
@@ -65,8 +78,8 @@ p {
 
 .content-main {
   width: 100%;
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .container-full {
@@ -563,10 +576,7 @@ figure.effect-bubba:hover p {
   height: auto;
 }
 
-.title-tag {
-  margin: 0 auto 50px;
-  /*text-decoration: underline overline;*/
-}
+.title-tag {}
 
 .wpcf7-not-valid {
   background-color: $vermelho-claro;
@@ -773,12 +783,12 @@ div.wpcf7-response-output {
     width: 100%;
     cursor: pointer;
     margin-bottom: 0.3em;
-    filter: grayscale(1);
+    filter: grayscale(0);
 
     @extend .trans;
 
     &:hover {
-      filter: grayscale(0);
+      filter: grayscale(1);
     }
   }
 }
