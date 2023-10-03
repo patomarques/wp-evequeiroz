@@ -2527,6 +2527,10 @@ main {
   padding: 20px;
 }
 
+.grid-posts .grid-post__title__subtitle {
+  font-size: 1.2em;
+}
+
 .post-thumbnail {
   position: relative;
 }

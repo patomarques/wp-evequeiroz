@@ -113,8 +113,12 @@
     &__box {
       padding: 20px;
     }
-    &__title {}
-    &__subtitle {}
+    &__title {
+      &__subtitle {
+        font-size: 1.2em;
+      }
+    }
+    
     &__description {}
   }
 }

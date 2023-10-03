@@ -11,7 +11,7 @@ $args = array(
     'posts_per_page' => $numposts,
     'paged' => $paged
 );
-$posts = new WP_Query($args); 
+$posts = new WP_Query($args);
 ?>
 
 <div class="content-main">
@@ -38,8 +38,8 @@ $posts = new WP_Query($args);
                                     if ($category->category_nicename != 'sem-categoria') { ?>
 
                                         <li class="grid-post__categories__item list-inline-item tags"">
-                                                    <a href=" <?= esc_url(get_category_link($category->term_id)) ?>"
-                                            class="grid-post__categories__item__link">
+                                            <a href=" <?= esc_url(get_category_link($category->term_id)) ?>"
+                                                class="grid-post__categories__item__link">
                                             <?= $category->name ?>
                                             </a>
                                         </li>
@@ -48,16 +48,13 @@ $posts = new WP_Query($args);
 
                                 <?php } ?>
                             </ul>
-                            <?php
-                            if (has_post_thumbnail()) {
-                                the_post_thumbnail();
-                            } else {
-                                echo showNoImage();
-                            } ?>
+                            <?php echo showThumbnail(); ?>
                         </div>
                         <div class="grid-post__box">
                             <div class="grid-post_title title-subtitle">
-                                <?php echo the_title(); ?>
+                                <a href="<?php echo the_permalink(); ?>" title="<?php echo the_title(); ?>" alt="<?php echo the_title(); ?>">
+                                    <?php echo the_title(); ?>
+                                </a>
                             </div>
                             <div class="grid-post_subtitle mb-3">
                                 <i class="fa fa-clock-o"></i> Postado em
