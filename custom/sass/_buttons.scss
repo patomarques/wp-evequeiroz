@@ -170,7 +170,8 @@
   color: $preto;
   font-weight: 700;
   position: relative;
-  font-style: 1.2em;
+  font-size: 1em;
+  padding: .5em;
 
   &:before {
     content: '';
@@ -180,8 +181,7 @@
     bottom: 3px;
     width: 100%;
     height: 3px;
-    z-index: -1;
-    transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;    
   }
 
   &:hover {
@@ -190,6 +190,7 @@
     &:before {
       bottom: 0;
       height: 100%;
+      z-index: -1;
     }
   }
 }

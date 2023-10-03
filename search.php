@@ -41,7 +41,7 @@ get_header(); ?>
 			endif; ?>
 
 		</main>
-		<div class="col-12 col-md-4 col-lg-4 offset-lg-1">
+		<div class="col-12 col-lg-4 offset-lg-1">
 			<?php get_sidebar(); ?>
 		</div>
 	</div>

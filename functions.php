@@ -47,7 +47,8 @@ if (!function_exists('wp_bootstrap_starter_setup')):
         register_nav_menus(
             array(
                 'primary' => esc_html__('Primary', 'wp-bootstrap-starter'),
-            ));
+            )
+        );
 
         /*
          * Switch default core markup for search form, comment form, and comments
@@ -58,13 +59,15 @@ if (!function_exists('wp_bootstrap_starter_setup')):
             'comment-list',
             'gallery',
             'caption',
-        ));
+        )
+        );
 
         // Set up the WordPress core custom background feature.
         add_theme_support('custom-background', apply_filters('wp_bootstrap_starter_custom_background_args', array(
             'default-color' => 'ffffff',
             'default-image' => '',
-        )));
+        )
+        ));
 
         // Add theme support for selective refresh for widgets.
         add_theme_support('customize-selective-refresh-widgets');
@@ -108,7 +111,8 @@ function wp_bootstrap_starter_widgets_init()
             'after_widget' => '</section>',
             'before_title' => '<h3 class="widget-title">',
             'after_title' => '</h3>',
-        ));
+        )
+    );
     register_sidebar(
         array(
             'name' => esc_html__('Footer 1', 'wp-bootstrap-starter'),
@@ -118,7 +122,8 @@ function wp_bootstrap_starter_widgets_init()
             'after_widget' => '</section>',
             'before_title' => '<h3 class="widget-title">',
             'after_title' => '</h3>',
-        ));
+        )
+    );
     register_sidebar(
         array(
             'name' => esc_html__('Footer 2', 'wp-bootstrap-starter'),
@@ -128,7 +133,8 @@ function wp_bootstrap_starter_widgets_init()
             'after_widget' => '</section>',
             'before_title' => '<h3 class="widget-title">',
             'after_title' => '</h3>',
-        ));
+        )
+    );
     register_sidebar(
         array(
             'name' => esc_html__('Footer 3', 'wp-bootstrap-starter'),
@@ -138,7 +144,8 @@ function wp_bootstrap_starter_widgets_init()
             'after_widget' => '</section>',
             'before_title' => '<h3 class="widget-title">',
             'after_title' => '</h3>',
-        ));
+        )
+    );
 }
 add_action('widgets_init', 'wp_bootstrap_starter_widgets_init');
 
@@ -284,7 +291,7 @@ function create_post_type()
                 'singular_name' => __('Lambe-Lambe Stickers')
             ),
             'public' => true,
-            'has_archive' => true,
+            'has_archive' => false,
             'supports' => array(
                 'title',
                 'editor',
@@ -311,48 +318,23 @@ function create_post_type()
             )
         )
     );
-
-    register_post_type(
-        'videos',
-        array(
-            'labels' => array(
-                'name' => _('Vídeos'),
-                'singular_name' => _('videos')
-            ),
-            'public' => true,
-            'has_archive' => true,
-            'supports' => array(
-                'title',
-                'excerpt',
-            )
-        )
-    );
-
-    register_post_type(
-        'midias',
-        array(
-            'labels' => array(
-                'name' => __('Midia'),
-                'singular_name' => __('midias')
-            ),
-            'public' => true,
-            'has_archive' => true,
-            'rewrite' => array('slug' => 'midias'),
-            'taxonomies' => array('topics', 'category'),
-            'supports' => array(
-                'title',
-                'editor',
-            )
-        )
-    );
 }
 
 add_action('init', 'create_post_type');
 
-function showNoImage() {
-    return "<img src='" . esc_url( get_template_directory_uri() . '/custom/img/no-image.jpg' ) . "' alt='Nenhuma Imagem' title='Nenhuma Imagem' />";
+function showNoImage()
+{
+    return "<img src='" . esc_url(get_template_directory_uri() . '/custom/img/no-image.jpg') . "' alt='Nenhuma Imagem' title='Nenhuma Imagem' />";
 }
 
+function showThumbnail()
+{
+    if (has_post_thumbnail()) {
+        return the_post_thumbnail();
+    } else {
+        return showNoImage();
+    }
+}
 function wp_add_import_scripts()
 {
     // Register the script like this for a plugin:
@@ -397,7 +379,7 @@ function custom_pagination($numpages = '', $pagerange = '', $paged = '')
         $pagerange = 2;
     }
 
-    global $paged;    
+    global $paged;
 
     if (empty($paged)) {
         $paged = 1;
@@ -439,3 +421,11 @@ function custom_pagination($numpages = '', $pagerange = '', $paged = '')
     }
 }
 
+function remove_pages_from_search($query)
+{
+    if ($query->is_search) {
+        $query->set('post_type', 'post');
+    }
+    return $query;
+}
+add_filter('pre_get_posts', 'remove_pages_from_search');

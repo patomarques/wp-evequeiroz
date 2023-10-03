@@ -87,7 +87,8 @@
 
   .grid-post {
     background-color: $cinza-f6;
-    margin-bottom: 20px;
+    min-height: 725px;
+    margin-bottom: 30px;
 
     &__image {
       position: relative;
@@ -106,14 +107,8 @@
 
       &__item {
         position: relative;
-
-      }
-
-      &__link {
-
-      }
+      }      
     }
-
 
     &__box {
       padding: 20px;

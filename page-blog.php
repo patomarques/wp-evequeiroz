@@ -26,7 +26,7 @@ $posts = new WP_Query($args);
             <?php while ($posts->have_posts()):
                 $posts->the_post(); ?>
 
-                <div class="col-12 col-md-4 col-lg-4">
+                <div class="col-12 col-lg-4">
                     <div class="grid-post">
                         <div class="grid-post__image">
                             <ul class="grid-post__categories list-inline">

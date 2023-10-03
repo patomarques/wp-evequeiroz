@@ -28,6 +28,7 @@ a {
   color: $preto;
   text-decoration: none !important;
   font-weight: 700;
+  font-size: 1.2em;
 
   @extend .trans;
 
@@ -698,6 +699,19 @@ div.wpcf7-response-output {
   }
 }
 
+
+.search-results {
+  .post.hentry {
+    margin-bottom: 1rem;
+  }
+}
+
+.content-blog {
+  .post.hentry {
+    margin-bottom: 4rem;
+  }
+}
+
 .nav-links {
 
   .nav-previous,
@@ -904,6 +918,7 @@ div.wpcf7-response-output {
   -moz-border-radius-topright: 4px;
   -webkit-border-top-right-radius: 4px;
   border-top-right-radius: 4px;
+  z-index: 9;
 
   @extend .trans;
 
@@ -975,6 +990,10 @@ div.wpcf7-response-output {
 
     }
   }
+}
+
+section.widget {
+  margin-bottom: 80px;
 }
 
 @media (min-width: $screen-xs-min) {
