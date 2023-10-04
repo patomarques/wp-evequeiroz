@@ -23,55 +23,23 @@ jQuery(document).ready(function ($) {
                 $('.site-header').stop(true, false).removeClass('fixed-nav', { duration: 200000 });
             }
         });
-    }else{
-        $('#primary').style('margin-top', '120px');
+    } else {
+        $('#primary').css('margin-top', '120px');
         $('.site-header').stop(true, false).addClass('fixed-nav', { duration: 200000 });
     }
 
     //image lightbox
     $(function () {
-        var $gallery = $('.content-lazy-loading a').simpleLightbox();
-        var $gallery = $('.grid .grid-item a').simpleLightbox();
+        var $galleryHandpoke = $('.content-lazy-loading a').simpleLightbox();
+        var $galleryGrid = $('.grid .grid-item a').simpleLightbox();
 
-        $gallery.on('show.simplelightbox', function () { })
-            .on('shown.simplelightbox', function () {
-                // console.log('Shown');
-            })
-            .on('close.simplelightbox', function () {
-                // console.log('Requested for closing');
-            })
-            .on('closed.simplelightbox', function () {
-                // console.log('Closed');
-            })
-            .on('change.simplelightbox', function () {
-                // console.log('Requested for change');
-            })
-            .on('next.simplelightbox', function () {
-                // console.log('Requested for next');
-            })
-            .on('prev.simplelightbox', function () {
-                // console.log('Requested for prev');
-            })
-            .on('nextImageLoaded.simplelightbox', function () {
-                // console.log('Next image loaded');
-            })
-            .on('prevImageLoaded.simplelightbox', function () {
-                // console.log('Prev image loaded');
-            })
-            .on('changed.simplelightbox', function () {
-                // console.log('Image changed');
-            })
-            .on('nextDone.simplelightbox', function () {
-                // console.log('Image changed to next');
-            })
-            .on('prevDone.simplelightbox', function () {
-                // console.log('Image changed to prev');
-            })
-            .on('error.simplelightbox', function (e) {
-                // console.log('No image found, go to the next/prev');
-                // console.log(e);
-            });
+        loadLightBox($galleryHandpoke);
+        loadLightBox($galleryGrid);
     });
+
+    function loadLightBox(element) {
+        element.on('show.simplelightbox', function(){});
+    }
 
     $('ul.dropdown-menu').bind('mouseleave', function () {
         var dropdown = $(this);

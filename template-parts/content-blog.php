@@ -7,7 +7,6 @@ $args = array(
     'order' => 'DESC',
 );
 $last_posts = get_posts($args);
-//print_r($last_posts);
 ?>
 <section id="blog-posts" class="content-main container-fluid">
     <div class="container">
@@ -22,18 +21,14 @@ $last_posts = get_posts($args);
 
                     <?php foreach ($last_posts as $post) { ?>
 
-                        <div class="content-post mb-5">
+                        <div class="content-post mb-4">
 
                             <div class="content-post__image" style="background-image: url(<?= get_the_post_thumbnail_url( $post->ID ) ?>)">
                                 <div class="content-post__categories">
 
                                     <ul class="list-inline tags">
                                         <?php 
-                                            $categories = get_categories( array(
-                                                'orderby' => 'name',
-                                                'order'   => 'ASC',
-                                                'hide_empty'      => true,
-                                            ) );
+                                            $categories = get_the_category();
                                         
                                             foreach( $categories as $category){ 
 

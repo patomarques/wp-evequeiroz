@@ -101,16 +101,6 @@ $posts = new WP_Query($args);
                             <span class="data-postagem"><i class="fa fa-clock-o"></i>
                                 <?php echo get_the_date(); ?>
                             </span>
-                            <!--<span class="categoria">
-                                <?php /*if(sizeof(get_the_category()) > 0){ */?>
-                                    <ul class="list-categorias list-inline">
-                                        <li class="item-inline"><b>Categoria:</b></li>
-                                        <?php /*foreach(get_the_category() AS $cat){ */?>
-                                            <li><?php /*print_r($cat->cat_name); */?></li>
-                                        <?php /*} */?>
-                                    </ul>
-                                <?php /*} */?>
-                            </span>-->
                             <div class="resumo text-center">
                                 <?php echo get_the_excerpt(); ?>
                             </div>
