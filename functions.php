@@ -318,6 +318,24 @@ function create_post_type()
             )
         )
     );
+
+    register_post_type(
+        'Social Media',
+        array(
+            'labels' => array(
+                'name' => _('Social Media'),
+                'singular_name' => _('social-media')
+            ),
+            'public' => true,
+            'has_archive' => false,
+            'supports' => array(
+                'title',
+                'editor',
+                'thumbnail',
+                'page-attributes'
+            )
+        )
+    );
 }
 
 add_action('init', 'create_post_type');
