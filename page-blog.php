@@ -16,12 +16,12 @@ $posts = new WP_Query($args);
 
 <div class="content-main">
     <div class="container">
-        <div class="row mb-5">
+        <div class="row">
             <div class="col-12 text-center">
                 <h1 class="title-tag">Blog</h1>
             </div>
         </div>
-        <div class="row mt-3 grid-posts">
+        <div class="row grid-posts">
 
             <?php while ($posts->have_posts()):
                 $posts->the_post(); ?>

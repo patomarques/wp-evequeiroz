@@ -1,8 +1,5 @@
-<!--
-Template Name: Sobre Mim
--->
-
 <?php get_header(); ?>
+
 <div class="site-content site-individual content-main" id="page-sobre">
     <div class="container">
         <div class="row">
@@ -12,11 +9,10 @@ Template Name: Sobre Mim
         </div>
         <div class="row">
             <?php
-            // TO SHOW THE PAGE CONTENTS
-            while ( have_posts() ) : the_post(); ?> <!--Because the_content() works only inside a WP Loop -->
-                <div class="col-sm-12 col-md-12 col-lg-8 offset-lg-2 text-justify">
+            while ( have_posts() ) : the_post(); ?> 
+                <div class="col-12 text-justify">
                     <div class="content-text">
-                        <?php the_content(); ?> <!-- Page Content -->
+                        <?php the_content(); ?> 
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-5 text-center hidden">

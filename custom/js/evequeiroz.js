@@ -16,7 +16,6 @@ jQuery(document).ready(function ($) {
         $(window).bind('scroll', function () {
             let alturaContent = $('.site-header').outerHeight();
 
-
             if ($(window).scrollTop() > alturaContent) {
                 $('.site-header').stop(true, false).addClass('fixed-nav', { duration: 200000 });
             } else {
@@ -24,7 +23,7 @@ jQuery(document).ready(function ($) {
             }
         });
     } else {
-        $('#primary').css('margin-top', '120px');
+        $('#page').css('margin-top', '120px');
         $('.site-header').stop(true, false).addClass('fixed-nav', { duration: 200000 });
     }
 
