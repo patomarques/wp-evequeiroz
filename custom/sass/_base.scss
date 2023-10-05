@@ -79,8 +79,6 @@ p {
 
 .content-main {
   width: 100%;
-  margin-top: 60px;
-  margin-bottom: 60px;
 }
 
 .container-full {
@@ -577,8 +575,6 @@ figure.effect-bubba:hover p {
   height: auto;
 }
 
-.title-tag {}
-
 .wpcf7-not-valid {
   background-color: $vermelho-claro;
   outline: none !important;
@@ -797,12 +793,12 @@ div.wpcf7-response-output {
     width: 100%;
     cursor: pointer;
     margin-bottom: 0.3em;
-    filter: grayscale(0);
+    filter: grayscale(1);
 
     @extend .trans;
 
     &:hover {
-      filter: grayscale(1);
+      filter: grayscale(0);
     }
   }
 }
@@ -1040,6 +1036,10 @@ section.widget {
   .square {
     flex-basis: calc(100% / 3);
   }
+}
+
+.entry-title a {
+  font-size: 1em;
 }
 
 @media (min-width: $screen-lg-min) {

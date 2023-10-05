@@ -48,7 +48,7 @@
 					if ($category->category_nicename != 'sem-categoria') { ?>
 
 						<li class="list-inline-item tags">
-							<a href=" <?= esc_url(get_category_link($category->slug)) ?>"
+							<a href="<?= esc_url(get_category_link($category->term_id)) ?>"
 								class="grid-post__categories__item__link">
 								<?= $category->name ?>
 							</a>

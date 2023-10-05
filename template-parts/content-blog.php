@@ -8,7 +8,7 @@ $args = array(
 );
 $last_posts = get_posts($args);
 ?>
-<section id="blog-posts" class="content-main container-fluid">
+<section id="blog-posts" class="content-main container-fluid mt-5">
     <div class="container">
         <div class="row">
             <div class="col-12">

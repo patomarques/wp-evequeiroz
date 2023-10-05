@@ -3,7 +3,7 @@
 <?php $graffiti = new WP_Query( 'post_type=graffiti&orderby=data&order=DESC&posts_per_page=999' ); ?>
 <?php $lambes = new WP_Query( 'post_type=lambe-lambe-stickers&orderby=data&order=DESC&posts_per_page=999' ); ?>
 
-    <div class="col-sm-12 text-center">
+    <div class="col-sm-12 text-center mb-5">
          <h1 class="title-tag"><?php echo get_the_title(); ?></h1>
     </div>
     <div class="gallery">
@@ -11,7 +11,7 @@
             <?php while ( $graffiti->have_posts() ) : $graffiti->the_post(); ?>
 
                 <div class="grid-item">
-                    <a href="<?php echo the_post_thumbnail_url('large'); ?>">
+                    <a href="<?php echo the_post_thumbnail_url('medium_large'); ?>">
                         <?php echo the_post_thumbnail('medium'); ?>
                     </a>
                 </div>
@@ -20,7 +20,7 @@
             <?php while ( $lambes->have_posts() ) : $lambes->the_post(); ?>
 
                 <div class="grid-item">
-                    <a href="<?php echo the_post_thumbnail_url('large'); ?>">
+                    <a href="<?php echo the_post_thumbnail_url('medium_large'); ?>">
                         <?php echo the_post_thumbnail('medium'); ?>
                     </a>
                 </div>

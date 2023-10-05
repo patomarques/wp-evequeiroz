@@ -78,6 +78,7 @@
   word-spacing: 4px;
   font-size: 3em;
   letter-spacing: 2px;
+  margin: 10px auto 60px;
 }
 
 .title-tag:after {
@@ -1156,8 +1157,6 @@ p.big {
 
 .content-main {
   width: 100%;
-  margin-top: 60px;
-  margin-bottom: 60px;
 }
 
 .container-full {
@@ -1832,13 +1831,13 @@ div.wpcf7-response-output {
   width: 100%;
   cursor: pointer;
   margin-bottom: 0.3em;
-  -webkit-filter: grayscale(0);
-          filter: grayscale(0);
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
 }
 
 .content-lazy-loading__image:hover {
-  -webkit-filter: grayscale(1);
-          filter: grayscale(1);
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
 }
 
 .sl-wrapper .sl-navigation button.sl-prev,
@@ -2038,6 +2037,10 @@ section.widget {
     -ms-flex-preferred-size: calc(100% / 3);
         flex-basis: calc(100% / 3);
   }
+}
+
+.entry-title a {
+  font-size: 1em;
 }
 
 @media (min-width: 1200px) {
