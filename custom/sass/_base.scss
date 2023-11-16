@@ -1042,6 +1042,16 @@ section.widget {
   font-size: 1em;
 }
 
+.page-street-art {
+  .gallery { 
+    a {
+      img {
+        filter: grayscale(0) !important; 
+      }
+    }
+  }
+}
+
 @media (min-width: $screen-lg-min) {
   .grid {
     figure {
