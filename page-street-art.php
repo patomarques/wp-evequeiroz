@@ -1,49 +1,43 @@
 <?php get_header(); ?>
 
-<?php $graffiti = new WP_Query( 'post_type=graffiti&orderby=data&order=DESC&posts_per_page=999' ); ?>
-<?php $lambes = new WP_Query( 'post_type=lambe-lambe-stickers&orderby=data&order=DESC&posts_per_page=999' ); ?>
+<?php $graffiti = new WP_Query('post_type=graffiti&orderby=data&order=DESC&posts_per_page=999'); ?>
+<?php $lambes = new WP_Query('post_type=lambe-lambe-stickers&orderby=data&order=DESC&posts_per_page=999'); ?>
 
-    <div class="col-sm-12 text-center mb-5">
-         <h1 class="title-tag"><?php echo get_the_title(); ?></h1>
-    </div>
-    <div class="gallery">
-        <div class="grid">
-            <?php while ( $graffiti->have_posts() ) : $graffiti->the_post(); ?>
+<div class="col-sm-12 text-center mb-5">
+    <h1 class="title-tag">
+        <?php echo get_the_title(); ?>
+    </h1>
+</div>
+<div class="content-lazy-loading">
+    <?php while ($graffiti->have_posts()):
+        $graffiti->the_post(); ?>
 
-                <div class="grid-item">
-                    <a href="<?php echo the_post_thumbnail_url('medium_large'); ?>">
-                        <?php echo the_post_thumbnail('medium'); ?>
-                    </a>
-                </div>
-            <?php endwhile; ?>
-            
-            <?php while ( $lambes->have_posts() ) : $lambes->the_post(); ?>
+        <a class="content-lazy-loading__link" href="<?php echo the_post_thumbnail_url('medium_large'); ?>">
+            <?php
+            if ((wp_check_filetype(get_the_post_thumbnail_url())['type']) == 'image/gif') {
+                echo the_post_thumbnail('full');
+            } else {
+                echo the_post_thumbnail('medium');
+            }
+            ?>
+        </a>
 
-                <div class="grid-item">
-                    <a href="<?php echo the_post_thumbnail_url('medium_large'); ?>">
-                        <?php echo the_post_thumbnail('medium'); ?>
-                    </a>
-                </div>
-            <?php endwhile; ?>
-        </div>
-    </div>
-    
+    <?php endwhile; ?>
 
-<script src="<?php echo get_template_directory_uri(); ?>/bower_components/isotope-layout/dist/isotope.pkgd.min.js"></script>
-<script>
+    <?php while ($lambes->have_posts()):
+        $lambes->the_post(); ?>
 
-    jQuery(window).load(function( $ ) {
-        var elem = document.querySelector('.grid');
-        var iso = new Isotope( elem, {
-            // options
-            itemSelector: '.grid-item',
-            layoutMode: 'fitRows'
-        });
+        <a class="content-lazy-loading__link" href="<?php echo the_post_thumbnail_url('medium_large'); ?>">
+            <?php
+            if ((wp_check_filetype(get_the_post_thumbnail_url())['type']) == 'image/gif') {
+                echo the_post_thumbnail('full');
+            } else {
+                echo the_post_thumbnail('medium');
+            }
+            ?>
+        </a>
 
-        var iso = new Isotope( '.grid', {
-            // options
-        });
-    });
-</script>
+    <?php endwhile; ?>
+</div>
 
 <?php get_footer(); ?>
