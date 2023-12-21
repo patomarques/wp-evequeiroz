@@ -802,6 +802,12 @@ div.wpcf7-response-output {
       filter: grayscale(0);
     }
   }
+
+  &__link {
+    img {
+      margin-bottom: 5px;
+    }
+  }
 }
 
 .sl-wrapper {

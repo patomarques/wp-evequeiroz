@@ -19,9 +19,9 @@
             <a class="content-lazy-loading__link" href="<?php echo the_post_thumbnail_url('large'); ?>">
                 <?php
                 if ((wp_check_filetype(get_the_post_thumbnail_url())['type']) == 'image/gif') {
-                    echo the_post_thumbnail('full');
+                    echo the_post_thumbnail('large');
                 } else {
-                    echo the_post_thumbnail('medium');
+                    echo the_post_thumbnail('medium_large');
                 }
                 ?>
             </a>
