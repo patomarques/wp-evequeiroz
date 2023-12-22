@@ -11,46 +11,23 @@
                 </h1>
             </div>
         </div>
-        <div class="gallery">
-            <div class="grid">
-                <?php while ($items->have_posts()):
-                    $items->the_post(); ?>
+    </div>
+    <div class="content-lazy-loading">
+        <?php while ($items->have_posts()):
+            $items->the_post(); ?>
 
-                    <div class="grid-item">
-                        <a href="<?php echo the_post_thumbnail_url('medium_large'); ?>">
-                            <img src="<?php echo the_post_thumbnail_url('medium'); ?>" alt="<?= get_the_title() ?>"
-                                class="content-lazy-loading__image">
-                        </a>
-                    </div>
-                <?php endwhile; ?>
-            </div>
-            <!--<div class="grid-item grid-item--width2"></div>-->
-        </div>
+            <a class="content-lazy-loading__link" href="<?php echo the_post_thumbnail_url('large'); ?>">
+                <?php
+                if ((wp_check_filetype(get_the_post_thumbnail_url())['type']) == 'image/gif') {
+                    echo the_post_thumbnail('large');
+                } else {
+                    echo the_post_thumbnail('medium_large');
+                }
+                ?>
+            </a>
+
+        <?php endwhile; ?>
     </div>
 </div>
-
-<script
-    src="<?php echo get_template_directory_uri(); ?>/bower_components/isotope-layout/dist/isotope.pkgd.min.js"></script>
-<script>
-    jQuery(document).ready(function ($) {
-
-    });
-
-
-    jQuery(window).load(function ($) {
-        var elem = document.querySelector('.grid');
-        var iso = new Isotope(elem, {
-            // options
-            itemSelector: '.grid-item',
-            layoutMode: 'fitRows'
-        });
-
-        // element argument can be a selector string
-        //   for an individual element
-        var iso = new Isotope('.grid', {
-            // options
-        });
-    });
-</script>
 
 <?php get_footer(); ?>
